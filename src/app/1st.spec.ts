@@ -11,6 +11,8 @@ describe("List page Component (template)", () => {
     let el:      HTMLElement;
 
     //beforeEach permette a TestBed di resettarsi prima di ogni test, evitando cazzi amari
+    //async viene usato perché devo iniettare un component che usa template
+    //ALERT: c'è un problema con i template
     beforeEach(async(() => {
         //creo un modulo fittizio per contenere gli oggetti che testo
         TestBed.configureTestingModule({

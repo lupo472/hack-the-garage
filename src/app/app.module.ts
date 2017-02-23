@@ -3,6 +3,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { MaterialModule } from '@angular/material';
 
 //import components
 import { AppComponent } from './app.component';
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
   imports:      [ //global imports (all imported modules available for the module)
     BrowserModule, 
     RouterModule.forRoot(appRoutes),
-    HttpModule
+    HttpModule,
+    MaterialModule
   ],
   declarations: [ //components globally declared into project
     HomeComponent, 
