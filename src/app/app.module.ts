@@ -42,7 +42,8 @@ const appRoutes: Routes = [
   ],
   providers: [  //import services globally into project
     LangService,
-    Strings
+    Strings, 
+
   ],
   bootstrap:    [ AppComponent ]
 })

@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ApiService {
-    private apiUrl = '138.68.133.189/leparkboxygate-web/';  // URL to web API
+    private apiUrl = 'https://reqres.in/api/';  // URL to web API
 
     constructor ( private http: Http ) { }
 
@@ -24,6 +24,12 @@ export class ApiService {
             { 
                 name
             }, options)
+                        .map(this.extractData)
+                        .catch(this.handleError);
+    }
+
+    getMasterData(userId: number): Observable<any> {
+        return this.http.get(this.apiUrl + "users/:userId")
                         .map(this.extractData)
                         .catch(this.handleError);
     }
