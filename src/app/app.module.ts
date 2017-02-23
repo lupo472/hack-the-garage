@@ -11,6 +11,10 @@ import { HomeComponent }  from './page_components/home.component';
 import { ListComponent }  from './page_components/list.component';
 import { HttpComponent }  from './page_components/http.component';
 
+
+import { ProcedureFlowComponent }  from './components/procedure_flow/procedure-flow.component';
+import { MasterDataComponent }  from './components/procedure_flow/master-data.component';
+
 //import services
 import { LangService } from './services/lang.service';
 import { Strings } from './services/strings.service';
@@ -32,7 +36,9 @@ const appRoutes: Routes = [
     HomeComponent, 
     AppComponent, 
     ListComponent,
-    HttpComponent
+    HttpComponent,
+    ProcedureFlowComponent,
+    MasterDataComponent
   ],
   providers: [  //import services globally into project
     LangService,
