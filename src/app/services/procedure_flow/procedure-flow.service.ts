@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { MasterData } from '../../model/master-data'
 
 @Injectable()
-export class ProcedureService {
+export class ProcedureFlowService {
     constructor (
         //injections goes here
     ) { }
