@@ -25,7 +25,6 @@ const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'list', component: ListComponent},
     {path: 'http', component: HttpComponent},
-    {path: 'pdf', component: DocSection}
 ];
 
 @NgModule({
