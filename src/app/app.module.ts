@@ -18,6 +18,7 @@ import { MasterDataComponent }  from './components/procedure_flow/master-data.co
 //import services
 import { LangService } from './services/lang.service';
 import { Strings } from './services/strings.service';
+import { ProcedureService } from './services/procedure_flow/procedure.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
   ],
   providers: [  //import services globally into project
     LangService,
-    Strings
+    Strings,
+    ProcedureService
   ],
   bootstrap:    [ AppComponent ]
 })
