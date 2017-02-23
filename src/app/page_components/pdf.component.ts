@@ -1,16 +1,12 @@
+declare let jsPDF : any;
 import {Component} from "@angular/core";
-var jsPDF = require('jspdf');
 
 @Component({
-    template: `
-        <button
-          (click)="download()">download
-        </button>
-        `
+    selector: 'pdf',
+    templateUrl: '/app/pages/pdf.template.html'
 })
 
 export class DocSection {
-
 
     constructor() {
     }

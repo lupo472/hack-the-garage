@@ -13,4 +13,7 @@ export class HomeComponent {
     goToHttp () {
         this.router.navigate(['/http']);
     }
+    getPDF () {
+        this.router.navigate(['/pdf']);
+    }
 }
