@@ -10,4 +10,6 @@ import { MasterData } from "../../model/master-data"
 })
 export class MasterDataComponent {
     
+
+    
 }
