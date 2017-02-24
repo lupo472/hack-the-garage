@@ -3,7 +3,6 @@
 
         <div *ngFor="let inp of tab.inputs">
 
-
             <md-input-container *ngIf="inp.type == 'text' || inp.type == 'number'">
                 <input mdInput *ngIf="inp.type == 'text'" placeholder="{{inp.name}}">
                 <input mdInput *ngIf="inp.type == 'number'" type="number" placeholder="{{inp.name}}">
@@ -20,18 +19,12 @@
                 <md-option *ngFor="let opt of inp.options" [value]="opt.value">{{ opt.label }}</md-option>
             </md-select>
 
+            <a md-raised
+
         </div>
     </md-tab>
 </md-tab-group>
 
 
-<form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
-    <div formArrayName="formArray">
-        <div *ngFor="let control of myForm.controls['formArray'].controls; let i = index">
-            <my-form-sub-component [myForm]="myForm.controls.formArray.controls[i]"></my-form-sub-component>
-        </div>
-    </div>
-    <button type="submit" [disabled]="!myForm.valid">Save</button>
-</form>
 
 

@@ -13,28 +13,13 @@ export class ProjectPlanComponent implements OnInit {
     constructor (
         private procedureService: ProcedureFlowService,
         private projectPlanService: ProjectPlanService,
-        private fb: FormBuilder
     ) {}
-    @Input() inputArray: Array<any>;
-    myForm: FormGroup;
     projectPlan: any;
 
     ngOnInit() {
         this.projectPlan = this.projectPlanService.getProjectPlan();
-        this.inputArray = new Array<any>();
-        let newForm = this.fb.group({
-            formArray: this.fb.array([])
-        });
-        const arrayControl = <FormArray>newForm.controls['formArray'];
-        this.inputArray.forEach(item => {
-            let newGroup = this.fb.group({
-                itemPropertyOne: ['InitialValue', [Validators.required]],
-                itemPropertyTwo: ['InitialValue', [Validators.minLength(5), Validators.maxLength(20)]]
-            });
-            arrayControl.push(newGroup);
-        });
+        for ()
 
-        this.myForm = newForm;
     }
     onSubmit(): void {
         console.log(this.myForm.value);
