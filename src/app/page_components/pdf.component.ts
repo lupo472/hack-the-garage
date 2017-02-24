@@ -1,14 +1,16 @@
+import {MasterDataComponent} from "../components/procedure_flow/master-data.component";
 declare let jsPDF : any;
 import {Component} from "@angular/core";
+import {MasterData} from '../model/master-data';
 
 @Component({
     selector: 'pdf',
     templateUrl: '/app/pages/pdf.template.html'
 })
 
-export class DocSection {
+export class PdfComponent {
 
-    constructor() {
+    constructor(public masterData : MasterDataComponent ) {
 
     }
 

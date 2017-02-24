@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { Procedure } from '../model/procedure'
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -51,25 +52,41 @@ export class ApiService {
                         .catch(this.handleError);
     }
 
-    saveProcedure(userId: number, procedureData: String): Observable<any> {
+    saveProcedure(userId: number, procedureData: Procedure, title: string ): Observable<any> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
         return this.http.post(this.apiUrl + "save_procedure",
                         {
-                            "userId": userId,
-                            "procedureData": procedureData
+                            "user_id": userId,
+                            "procedure_data": JSON.stringify(procedureData),
+                            "procedure_title" : title
                         }, 
                         options)
                         .map(this.extractData)
                         .catch(this.handleError);
     }
 
-    getProcedure(userId: number): Observable<any> {
-        return this.http.get(this.apiUrl + "")
+    getProcedureList(userId: number): Observable<any> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.post(this.apiUrl + "get_procedure_list", {
+                            user_id: userId
+                        }, options)
                         .map(this.extractData)
                         .catch(this.handleError);
     }
+
+     getProcedure(procedureId: number): Observable<any> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.post(this.apiUrl + "get_procedure_list", {
+                            procedure_id: procedureId
+                        }, options)
+                        .map(this.extractData)
+                        .catch(this.handleError);
+    }
+    
 
 
 
