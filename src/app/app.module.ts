@@ -11,6 +11,7 @@ import {HomeComponent}  from './page_components/home.component';
 import {ListComponent}  from './page_components/list.component';
 import {LoginComponent}  from './page_components/login.component';
 import {RegisterComponent}  from './page_components/register.component';
+import {ProcedureListComponent}  from './page_components/procedure-list.component';
 import {DocSection} from './page_components/pdf.component';
 
 
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
     {path: 'list', component: ListComponent},
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
+    {path: 'procedure', component: HomeComponent},
 ];
 
 @NgModule({
@@ -48,6 +50,7 @@ const appRoutes: Routes = [
     LoginComponent,
     RegisterComponent,
     ProcedureFlowComponent,
+    ProcedureListComponent,
     MasterDataComponent,
     ProjectPlanComponent,
     DocSection
