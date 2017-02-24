@@ -14,6 +14,7 @@ import {ListComponent}  from './page_components/list.component';
 import {LoginComponent}  from './page_components/login.component';
 import {RegisterComponent}  from './page_components/register.component';
 import {ProcedureListComponent}  from './page_components/procedure-list.component';
+import {NewProcedureComponent}  from './page_components/new-procedure.component';
 import {PdfComponent} from './page_components/pdf.component';
 import {ProcedureFlowComponent}  from './components/procedure_flow/procedure-flow.component';
 import {MasterDataComponent}  from './components/procedure_flow/master-data.component';
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
     {path: 'procedure/:id', component: HomeComponent},
+    {path: 'new-procedure', component: NewProcedureComponent},
 ];
 
 @NgModule({
@@ -53,6 +55,7 @@ const appRoutes: Routes = [
         ListComponent,
         LoginComponent,
         RegisterComponent,
+        NewProcedureComponent,
         ProcedureFlowComponent,
         ProcedureListComponent,
         MasterDataComponent,
