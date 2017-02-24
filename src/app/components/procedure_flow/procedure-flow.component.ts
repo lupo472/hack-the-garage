@@ -1,8 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 import { ProcedureFlowService } from "../../services/procedure_flow/procedure-flow.service"
 import { ProcedureService } from "../../services/procedure_flow/procedure.service"
+import { StatusService } from "../../services/status.service"
 
 import { MasterDataComponent } from "./master-data.component"
 
@@ -15,16 +16,35 @@ import { ApplicantData } from "../../model/applicant-data"
     templateUrl: "/app/components/procedure_flow/procedure-flow.template.html",
     providers: [ ProcedureFlowService ],    //lo dichiaro qui così sarà disponibile solo da qui e figli, ogni ProcedureFlowComponent instanzierà un Service diverso
 })
-export class ProcedureFlowComponent implements OnInit {
+export class ProcedureFlowComponent implements OnInit, OnDestroy {
     constructor (
+        private statusService: StatusService,
         private flowService: ProcedureFlowService,
         private procedureService: ProcedureService,
         private route: ActivatedRoute,
     ) { }
 
+    onExit() {
+        this.statusService.setState("standard");
+    }
+
+    onDiscard() {
+            this.statusService.setState("standard");
+    }
+
+    onSave() {
+        this.flowService.saveFlow().subscribe(()=>{
+            swal("Success", "Successfully saved your data", "success");
+        });
+    }
+
     ngOnInit() {
+        this.statusService.setState("proceduring");
         this.procedureService.getProcedure(this.route.snapshot.params["id"]).subscribe(
-            proc => this.flowService.loadProcedure(proc),
+        proc => this.flowService.loadProcedure(proc),
         );
+    }
+    ngOnDestroy() {
+        this.statusService.setState("standard");
     }
 }
