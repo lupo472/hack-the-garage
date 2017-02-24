@@ -11,7 +11,7 @@ export class MasterDataService{
 
     constructor(private backend: ApiService){ }
     
-    getMasterData(userId: number){
+    getMasterData(userId: string){
         this.backend.getMasterData(userId).subscribe(
             
         );

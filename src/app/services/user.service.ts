@@ -7,7 +7,7 @@ export class UserService{
 
     constructor(backend: ApiService){ }
 
-    getUserId(): number{
-        return 1;
+    getUserId(): string{
+        return "a.a@asd.com";
     }
 }

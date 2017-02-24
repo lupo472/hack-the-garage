@@ -7,7 +7,6 @@
                 <input mdInput *ngIf="inp.type == 'text'" placeholder="{{inp.name}}">
                 <input mdInput *ngIf="inp.type == 'number'" type="number" placeholder="{{inp.name}}">
             </md-input-container>
-
             <!-- radio button -->
             <md-radio-group *ngIf="inp.type == 'radio'">
                 <md-radio-button *ngFor="let opt of inp.options" value="{{opt.value}}">{{opt.label}}</md-radio-button>

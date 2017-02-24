@@ -5,6 +5,7 @@ import { ProjectPlanService } from "../../services/procedure_flow/project-plan.s
 import {FormArray, Validators, FormGroup, FormBuilder} from "@angular/forms";
 import {ArrayType} from "@angular/compiler/src/output/output_ast";
 
+
 @Component( {
     selector: "project-plan",
     templateUrl: "/app/components/procedure_flow/project-plan.template.html"
@@ -17,7 +18,7 @@ export class ProjectPlanComponent implements OnInit {
     projectPlan: any;
 
     ngOnInit() {
-        
+        this.projectPlan = this.projectPlanService.getProjectTemplate();
 
     }
     onSubmit(): void {

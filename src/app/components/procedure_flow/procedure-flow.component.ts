@@ -1,9 +1,8 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 import { ProcedureFlowService } from "../../services/procedure_flow/procedure-flow.service"
 import { ProcedureService } from "../../services/procedure_flow/procedure.service"
-import { StatusService } from "../../services/status.service"
 
 import { MasterDataComponent } from "./master-data.component"
 
@@ -17,42 +16,18 @@ import { ProjectPlanService } from "../../services/procedure_flow/project-plan.s
     templateUrl: "/app/components/procedure_flow/procedure-flow.template.html",
     providers: [ ProcedureFlowService ],    //lo dichiaro qui così sarà disponibile solo da qui e figli, ogni ProcedureFlowComponent instanzierà un Service diverso
 })
-export class ProcedureFlowComponent implements OnInit, OnDestroy {
+export class ProcedureFlowComponent implements OnInit {
     constructor (
-        private statusService: StatusService,
         private flowService: ProcedureFlowService,
         private procedureService: ProcedureService,
         private route: ActivatedRoute,
         private projectPlanService: ProjectPlanService
     ) { }
 
-    onExit() {
-        this.statusService.setState("standard");
-    }
-
-    onDiscard() {
-            this.statusService.setState("standard");
-    }
-
-    onSave() {
-        this.flowService.saveFlow().subscribe(()=>{
-            swal("Success", "Successfully saved your data", "success");
-        });
-    }
-
     ngOnInit() {
-        this.statusService.setState("proceduring");
         this.procedureService.getProcedure(this.route.snapshot.params["id"]).subscribe(
-        proc => this.flowService.loadProcedure(proc),
+            proc => this.flowService.loadProcedure(proc),
         );
-        this.projectPlanService.getTemplateProject("/hackthegarage.appspot.com/project_template/industrial.json").subscribe(
-            template => {
-                    this.flowService.setProjectTemplate(JSON.parse(template)); 
-                    console.log(template);
-            },
-        );
-    }
-    ngOnDestroy() {
-        this.statusService.setState("standard");
+        this.projectPlanService.loadProjectTemplate("/hackthegarage.appspot.com/project_template/industrial.json");
     }
 }

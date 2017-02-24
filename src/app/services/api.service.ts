@@ -34,7 +34,7 @@ export class ApiService {
 
 
 
-    getMasterData(userId: number): Observable<any> {
+    getMasterData(userId: string): Observable<any> {
         return this.http.post(this.apiUrl + "",{})
                         .map(this.extractData)
                         .catch(this.handleError);
@@ -52,7 +52,7 @@ export class ApiService {
                         .catch(this.handleError);
     }
 
-    saveProcedure(userId: number, procedureData: Procedure, title: string ): Observable<any> {
+    saveProcedure(userId: string, procedureData: Procedure, title: string ): Observable<any> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
@@ -67,7 +67,7 @@ export class ApiService {
                         .catch(this.handleError);
     }
 
-    getProcedureList(userId: number): Observable<any> {
+    getProcedureList(userId: string): Observable<any> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
         return this.http.post(this.apiUrl + "list_procedures_for_user", {

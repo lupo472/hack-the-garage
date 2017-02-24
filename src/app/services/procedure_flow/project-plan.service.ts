@@ -11,7 +11,7 @@ export class ProjectPlanService {
     getTemplateResponse: any;
 
     //logic goes here
-    getProjectPlan() {
+    getProjectTemplate() {
         return [
                 {
                     "name": "Tab1",
@@ -70,7 +70,9 @@ export class ProjectPlanService {
             ];
     }
 
-    getTemplateProject(templateId: string){
-        return this.backend.getTemplateProject(templateId);
+    loadProjectTemplate(templateId: string){
+        this.backend.getTemplateProject(templateId).map((data)=> { return JSON.parse(data); }).subscribe(
+            (data)=> {this.getTemplateResponse = data;}
+        );
     }
 }

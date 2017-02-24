@@ -15,6 +15,7 @@ export class ProcedureFlowService {
     ) { }
     procedure: Procedure = new Procedure();
     temp: Procedure = new Procedure();
+    projectTemplate: any;
 
     //logic goes here
     loadProcedure(proc: any) {
@@ -25,6 +26,11 @@ export class ProcedureFlowService {
     saveFlow() {
         return this.procService.saveProcedure(this.temp);
     }
+
+    setProjectTemplate(template:any){
+        this.projectTemplate = template;
+    }
+
     discardFlow() {
         //TODO: put procedure in temp
     }
