@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
-import {FormControl, FormArray, FormBuilder, FormGroup} from "@angular/forms";
+import { FormBuilder, FormGroup, Validators} from "@angular/forms";
+
 
 import { ProcedureFlowService } from "../../services/procedure_flow/procedure-flow.service"
 
@@ -13,6 +14,7 @@ export class MasterDataComponent {
 
     form: FormGroup;
     submitted: boolean = false;
+    valid: boolean = true;
 
     constructor (private fb: FormBuilder,
                  private procedureFlow : ProcedureFlowService) {

@@ -1,7 +1,7 @@
 <md-card>
     <div [hidden]="submitted">
         <h1>Anagrafica</h1>
-        <form (ngSubmit)="onSubmit()" #anagrafica="ngForm">
+        <form #anagrafica>
             <div class="form-group">
                 <label for="first_name">Nome</label>
                 <md-input-container>
@@ -55,7 +55,7 @@
                 <md-input-container>
                     <input mdInput class="form-control" id="email" placeholder="E-mail" required>
                 </md-input-container>
-                <button md-raise-button type="button" [disabled]="!anagrafica.form.valid">Invia</button>
+                <button md-raise-button type="button"  (click)="onSubmit()">Invia</button>
             </div>
         </form>
     </div>
