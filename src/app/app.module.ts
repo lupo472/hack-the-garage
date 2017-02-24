@@ -25,7 +25,8 @@ import { Strings } from './services/strings.service';
 import { ProjectPlanService } from './services/procedure_flow/project-plan.service';
 import { MasterDataService } from './services/procedure_flow/master-data.service';
 import { ProcedureService } from './services/procedure_flow/procedure.service';
-import { ProjectTypeService } from './services/procedure_flow/project-type.service';
+import { UserService } from './services/user.service';
+import { ApiService } from './services/api.service'
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -57,8 +58,9 @@ const appRoutes: Routes = [
     Strings, 
     MasterDataService,
     ProcedureService,
-    ProjectTypeService,
-    ProjectPlanService
+    ProjectPlanService,
+    UserService,
+    ApiService
   ],
   bootstrap:    [ AppComponent ]
 })
