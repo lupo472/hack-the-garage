@@ -31,11 +31,11 @@ import {ApiService} from './services/api.service';
 import {MyFormSubComponent} from "./components/procedure_flow/form.sub-component";
 
 const appRoutes: Routes = [
-    {path: '', component: HomeComponent},
+    {path: '', component: ProcedureListComponent},
     {path: 'list', component: ListComponent},
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
-    {path: 'procedure', component: HomeComponent},
+    {path: 'procedure/:id', component: HomeComponent},
 ];
 
 @NgModule({

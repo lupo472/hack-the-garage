@@ -1,1 +1,3 @@
-<h1>i am the list</h1>
+<md-list>
+    <md-list-item *ngFor="let item of procs" ><button md-button routerLink="/procedure/{{item.id}}">procedure no. {{ item.id }} : {{ item.name }}</button></md-list-item>
+</md-list>
