@@ -1,4 +1,11 @@
 <a md-raised-button (click) ="download()">Download PDF </a>
+
+
+<input #thefile type="file" id="myFile" [(ngModel)]="myInputValue">
+
+
+<button (click)="encodeFile(thefile.value)">Send</button>
+
 <style>
     a {
         color: #ffffff;

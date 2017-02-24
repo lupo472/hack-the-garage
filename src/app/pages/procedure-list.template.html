@@ -11,6 +11,23 @@ color:#00695c;
     <md-list-item *ngFor="let item of procs" ><md-icon style="color:#004d40;font-size: 40px;" md-list-avatar>assignment</md-icon><button md-button routerLink="/procedure/{{item.id}}">procedure no. {{ item.id }} : {{ item.name }}</button></md-list-item>
 </md-list>
 
+<!--<div class="example-tooltip-host" mdTooltip="Tooltip!" [mdTooltipPosition]="position">
+
+    </div>
+<div class="example-tooltip-host" mdTooltip="Tooltip!" [mdTooltipPosition]="position">
+  <span>Show tooltip</span>
+  <md-select class="example-select" [(ngModel)]="position">
+    <md-option value="before">Before</md-option>
+    <md-option value="after">After</md-option>
+    <md-option value="above">Above</md-option>
+    <md-option value="below">Below</md-option>
+    <md-option value="left">Left</md-option>
+    <md-option value="right">Right</md-option>
+  </md-select>
+</div>
+
+-->
+
 </md-card>
 
 </div>
