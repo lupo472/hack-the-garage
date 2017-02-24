@@ -1,14 +1,22 @@
-<md-toolbar color="primary">
-  <md-icon id="hamburger" (click)="sidenav.open()">&#xE5D2;</md-icon>
-  <button md-button routerLink="/login">Login</button>
-  <button md-button routerLink="/register">Register</button>
-  <button md-button routerLink="/">Home</button>
-</md-toolbar>
-<md-sidenav-container class="example-container">
-    <md-sidenav #sidenav class="example-sidenav">
-      Jolly good!
-    </md-sidenav>
 
-    <router-outlet></router-outlet>
+<md-sidenav-container style="    
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;" 
+    class="example-container">
+  <md-toolbar color="primary">
+    <md-icon id="hamburger" (click)="sidenav.open()">&#xE5D2;</md-icon>
+    <button md-button routerLink="/login">Login</button>
+    <button md-button routerLink="/register">Register</button>
+    <button md-button routerLink="/">Home</button>
+  </md-toolbar>
+
+  <md-sidenav #sidenav class="example-sidenav">
+    Jolly good!
+  </md-sidenav>
+
+  <router-outlet></router-outlet>
 
 </md-sidenav-container>
