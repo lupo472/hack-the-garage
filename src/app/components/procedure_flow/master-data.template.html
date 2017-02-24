@@ -1,70 +1,88 @@
 <md-card>
     <md-tab-group>
         <md-tab label="Dati cliente">
-        <div [formGroup]="anagrafica" (ngSubmit)="onSubmit()">
-            <md-input-container>
-                <input mdInput name="first_name" placeholder="Nome" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="last_name" placeholder="Cognome" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="birth_country" placeholder="Paese di nascita" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="birth_city" placeholder="Città di nascita" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="birth_date" placeholder="Data di nascita" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="tax_code" placeholder="Codice fiscale" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="VAT" placeholder="Partita IVA" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="country" placeholder="Paese di residenza" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="city" placeholder="Città di residenza" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="address" placeholder="Indirizzo" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="postal_code" placeholder="Codice postale" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="phone" placeholder="Telefono" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="email" type="email" placeholder="E-mail" >
-            </md-input-container>
-        </div>
+            <div [formGroup]="applicantForm">
+                <md-input-container>
+                    <input mdInput formControlName="applicantFirstName" class="form-control" name="first_name"
+                           placeholder="Nome">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="applicantLastName" class="form-control" name="last_name"
+                           placeholder="Cognome">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="applicantBirthCountry" class="form-control" name="birth_country"
+                           placeholder="Paese di nascita">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="applicantBirthCity" class="form-control" name="birth_city"
+                           placeholder="Città di nascita">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="applicantBirthDate" class="form-control" name="birth_date"
+                           placeholder="Data di nascita">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="applicantTaxCode" class="form-control" name="tax_code"
+                           placeholder="Codice fiscale">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="applicantCountry" class="form-control" name="country"
+                           placeholder="Paese di residenza">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="applicantCity" class="form-control" name="city"
+                           placeholder="Città di residenza">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="applicantAddress" class="form-control" name="address"
+                           placeholder="Indirizzo">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="applicantPostalCode" class="form-control" name="postal_code"
+                           placeholder="Codice postale">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="applicantPhone" class="form-control" name="phone"
+                           placeholder="Telefono">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="applicantEmail" class="form-control" name="email" type="email"
+                           placeholder="E-mail">
+                </md-input-container>
+            </div>
         </md-tab>
         <md-tab label="Dati azienda">
-            <md-input-container>
-                <input mdInput name="company_name" placeholder="Nome" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="vat" placeholder="Partita IVA" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="company_country" placeholder="Paese" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="company_address" placeholder="Indirizzo" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="company_postal_code" placeholder="Codice postale" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="company_phone" placeholder="Telefono" >
-            </md-input-container>
-            <md-input-container>
-                <input mdInput name="company_email" placeholder="E-mail" >
-            </md-input-container>
+            <div [formGroup]="companyForm">
+                <md-input-container>
+                    <input mdInput formControlName="companyName" class="form-control" name="company_name"
+                           placeholder="Nome">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="companyVat" class="form-control" name="vat"
+                           placeholder="Partita IVA">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="companyCountry" class="form-control" name="company_country"
+                           placeholder="Paese">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="companyAddress" class="form-control" name="company_address"
+                           placeholder="Indirizzo">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="companyPostalCode" class="form-control" name="company_postal_code"
+                           placeholder="Codice postale">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="companyPhone" class="form-control" name="company_phone"
+                           placeholder="Telefono">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput formControlName="companyEmail" class="form-control" name="company_email"
+                           placeholder="E-mail">
+                </md-input-container>
+            </div>
         </md-tab>
     </md-tab-group>
 </md-card>
