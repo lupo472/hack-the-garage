@@ -70,7 +70,7 @@ export class ApiService {
     getProcedureList(userId: number): Observable<any> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
-        return this.http.post(this.apiUrl + "get_procedure_list", {
+        return this.http.post(this.apiUrl + "list_procedures_for_user", {
                             user_id: userId
                         }, options)
                         .map(this.extractData)

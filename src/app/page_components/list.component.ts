@@ -19,7 +19,7 @@ export class ListComponent implements OnInit {
 
     ngOnInit() {
 
-        this.procedureService.getProcedureList().subscribe(
+       this.procedureService.getProcedureList().subscribe(
             procedure => this.items = procedure,
         );
 
