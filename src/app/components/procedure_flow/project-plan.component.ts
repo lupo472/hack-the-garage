@@ -17,7 +17,7 @@ export class ProjectPlanComponent implements OnInit {
     projectPlan: any;
 
     ngOnInit() {
-        this.projectPlan = this.projectPlanService.getProjectPlan();
+        
 
     }
     onSubmit(): void {

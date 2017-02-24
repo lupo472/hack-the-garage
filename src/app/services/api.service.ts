@@ -107,6 +107,14 @@ export class ApiService {
                             .catch(this.handleError);
     }
 
+    getTemplateProject(templateId: string): Observable<any> {
+        return this.http.post(this.apiUrl + "get_template_project",
+                            {
+                               id: templateId 
+                            })
+                            .map(this.extractData)
+                            .catch(this.handleError)
+    }
 
 
     private extractData(res: Response) {

@@ -9,6 +9,7 @@ import { MasterDataComponent } from "./master-data.component"
 import { MasterData } from "../../model/master-data"
 import { CompanyData } from "../../model/company-data"
 import { ApplicantData } from "../../model/applicant-data"
+import { ProjectPlanService } from "../../services/procedure_flow/project-plan.service"
 
 @Component( {
     selector: "procedure-flow",
@@ -20,11 +21,18 @@ export class ProcedureFlowComponent implements OnInit {
         private flowService: ProcedureFlowService,
         private procedureService: ProcedureService,
         private route: ActivatedRoute,
+        private projectPlanService: ProjectPlanService
     ) { }
 
     ngOnInit() {
         this.procedureService.getProcedure(this.route.snapshot.params["id"]).subscribe(
             proc => this.flowService.loadProcedure(proc),
+        );
+        this.projectPlanService.getTemplateProject("/hackthegarage.appspot.com/project_template/industrial.json").subscribe(
+            template => {
+                    this.flowService.setProjectTemplate(JSON.parse(template)); 
+                    console.log(template);
+            },
         );
     }
 }

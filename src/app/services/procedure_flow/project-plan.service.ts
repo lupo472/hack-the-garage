@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { ApiService } from '../api.service'
 
 
 @Injectable()
 export class ProjectPlanService {
     constructor (
-        //injections goes here
+       private backend: ApiService
     ) { }
+
+    getTemplateResponse: any;
 
     //logic goes here
     getProjectPlan() {
@@ -65,5 +68,9 @@ export class ProjectPlanService {
                     ]
                 }
             ];
+    }
+
+    getTemplateProject(templateId: string){
+        return this.backend.getTemplateProject(templateId);
     }
 }
