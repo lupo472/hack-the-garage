@@ -1,3 +1,24 @@
-<md-card>
-    <h1 *ngFor="let t of types">{{t.title}}Bello Figo</h1>
+
+<md-card *ngFor="let t of types" style=" width: 200px;" class="cardina" (click)=onCardSelected(t.id)>
+  <md-card-header>
+    <div style=" 
+    background-image: url('/app/res/money.png');
+    background-size: cover;"
+    md-card-avatar class="example-header-image"></div>
+    <md-card-title style="font-size: 22px" >{{t.title}}</md-card-title>
+    <md-card-subtitle></md-card-subtitle>
+  </md-card-header>
+  <img 
+      md-card-image src="/app/res/money.png"
+      style="width: 50%;
+       margin-left: 44px;
+      margin-right: 44px;">
+  <md-card-content>
+    <p>
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button>Bottone1</button>
+    <button md-button>BOTTONE2</button>
+  </md-card-actions>
 </md-card>
