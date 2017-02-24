@@ -1,4 +1,4 @@
 export class ProjectType {
-    id: number;
-    name: String;
+    id: string;
+    title: string;
 }

@@ -15,18 +15,27 @@ export class ListComponent implements OnInit {
     }
     items: any;
     save: string;
+    projectTypes: any;
 
 
     ngOnInit() {
 
        this.procedureService.getProcedureList().subscribe(
-            procedure => this.items = procedure,
+            procedures => this.items = procedures,
         );
 
-
+/*
         let proc: Procedure = new Procedure();
         this.procedureService.saveProcedure(proc).subscribe(
             data => this.save = "Salvata Procedure",
         );
+*/
+
+        this.procedureService.getProjectTypeList().subscribe(
+            projects => this.projectTypes = projects,
+        );
+
+
+
     }
 }

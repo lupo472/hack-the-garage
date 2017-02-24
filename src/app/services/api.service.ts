@@ -35,19 +35,19 @@ export class ApiService {
 
 
     getMasterData(userId: number): Observable<any> {
-        return this.http.get(this.apiUrl + "")
+        return this.http.post(this.apiUrl + "",{})
                         .map(this.extractData)
                         .catch(this.handleError);
     }
 
     getProjectPlanList(): Observable<any> {
-        return this.http.get(this.apiUrl + "")
+        return this.http.post(this.apiUrl + "",{})
                         .map(this.extractData)
                         .catch(this.handleError);
     }
 
     getProjectTypeList(): Observable<any> {
-        return this.http.get(this.apiUrl + "")
+        return this.http.post(this.apiUrl + "list_project_types", {})
                         .map(this.extractData)
                         .catch(this.handleError);
     }
