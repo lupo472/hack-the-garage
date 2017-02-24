@@ -10,7 +10,7 @@ import {MasterData} from '../model/master-data';
 
 export class PdfComponent {
 
-    constructor(public masterData : MasterDataComponent ) {
+    constructor() {
 
     }
 
