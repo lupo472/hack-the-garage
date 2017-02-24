@@ -55,6 +55,7 @@ const appRoutes: Routes = [
         LoginComponent,
         RegisterComponent,
         ProcedureFlowComponent,
+        ProcedureListComponent,
         MasterDataComponent,
         ProjectPlanComponent,
         MyFormSubComponent,
