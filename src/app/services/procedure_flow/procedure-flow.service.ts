@@ -14,4 +14,8 @@ export class ProcedureFlowService {
     temp: Procedure = new Procedure();
 
     //logic goes here
+    loadProcedure(proc: any) {
+        this.procedure = JSON.parse(proc);
+        console.log("FLOW-SERVICE: -->> LOADING PROCEDURE: " + this.procedure.toString());
+    }
 }
