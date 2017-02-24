@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ApiService {
-    private apiUrl = '138.68.133.189/leparkboxygate-web/';  // URL to web API
+    private apiUrl = 'https://hackthegarage.appspot.com/_ah/api/hackthegarage/v1/';  // URL to web API
 
     constructor ( private http: Http ) { }
 
@@ -27,6 +27,51 @@ export class ApiService {
                         .map(this.extractData)
                         .catch(this.handleError);
     }
+
+
+
+
+
+
+    getMasterData(userId: number): Observable<any> {
+        return this.http.get(this.apiUrl + "")
+                        .map(this.extractData)
+                        .catch(this.handleError);
+    }
+
+    getProjectPlanList(): Observable<any> {
+        return this.http.get(this.apiUrl + "")
+                        .map(this.extractData)
+                        .catch(this.handleError);
+    }
+
+    getProjectTypeList(): Observable<any> {
+        return this.http.get(this.apiUrl + "")
+                        .map(this.extractData)
+                        .catch(this.handleError);
+    }
+
+    saveProcedure(userId: number, procedureData: String): Observable<any> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.post(this.apiUrl + "save_procedure",
+                        {
+                            "userId": userId,
+                            "procedureData": procedureData
+                        }, 
+                        options)
+                        .map(this.extractData)
+                        .catch(this.handleError);
+    }
+
+    getProcedure(userId: number): Observable<any> {
+        return this.http.get(this.apiUrl + "")
+                        .map(this.extractData)
+                        .catch(this.handleError);
+    }
+
+
 
     private extractData(res: Response) {
         let body = res.json();

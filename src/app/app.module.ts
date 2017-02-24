@@ -23,6 +23,9 @@ import {ProjectPlanComponent}  from './components/procedure_flow/project-plan.co
 import { LangService } from './services/lang.service';
 import { Strings } from './services/strings.service';
 import { ProjectPlanService } from './services/procedure_flow/project-plan.service';
+import { MasterDataService } from './services/procedure_flow/master-data.service';
+import { ProcedureService } from './services/procedure_flow/procedure.service';
+import { ProjectTypeService } from './services/procedure_flow/project-type.service';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -51,7 +54,10 @@ const appRoutes: Routes = [
   ],
   providers: [  //import services globally into project
     LangService,
-    Strings,
+    Strings, 
+    MasterDataService,
+    ProcedureService,
+    ProjectTypeService,
     ProjectPlanService
   ],
   bootstrap:    [ AppComponent ]

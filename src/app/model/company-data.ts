@@ -4,7 +4,7 @@ export class CompanyData {
     country: string;
     city: string;
     address: string;
-    postalCode: string;
+    postalCode: number;
     phone: string;
     email: string;
 }
