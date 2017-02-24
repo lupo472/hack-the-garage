@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from "@angular/core";
+import {Component, OnInit, Input, NgZone} from "@angular/core";
 
 import { ProcedureFlowService } from "../../services/procedure_flow/procedure-flow.service"
 import { ProjectPlanService } from "../../services/procedure_flow/project-plan.service"
@@ -14,12 +14,21 @@ export class ProjectPlanComponent implements OnInit {
     constructor (
         private procedureService: ProcedureFlowService,
         private projectPlanService: ProjectPlanService,
+        private _ngZone: NgZone,
     ) {}
     projectPlan: any;
 
     ngOnInit() {
-        this.projectPlan = this.projectPlanService.getProjectTemplate();
+        this.tryLoad();
 
+    }
+    private tryLoad = function() {
+        let p = this.projectPlanService.isReady();
+        if (p) {
+            this.projectPlan = this.projectPlanService.getProjectTemplate("/hackthegarage.appspot.com/project_template/industrial.json");
+        } else {
+            setTimeout(this.tryload, 200);
+        }
     }
     onSubmit(): void {
         // Your form value is outputted as a JavaScript object.

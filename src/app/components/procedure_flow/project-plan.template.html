@@ -2,22 +2,24 @@
     <md-tab *ngFor="let tab of projectPlan" label="{{tab.name}}">
 
         <div *ngFor="let inp of tab.inputs">
-
-            <md-input-container *ngIf="inp.type == 'text' || inp.type == 'number'">
-                <input mdInput *ngIf="inp.type == 'text'" placeholder="{{inp.name}}">
-                <input mdInput *ngIf="inp.type == 'number'" type="number" placeholder="{{inp.name}}">
-            </md-input-container>
-            <!-- radio button -->
-            <md-radio-group *ngIf="inp.type == 'radio'">
-                <md-radio-button *ngFor="let opt of inp.options" value="{{opt.value}}">{{opt.label}}</md-radio-button>
-            </md-radio-group>
-            <!-- checkbox -->
-            <md-checkbox *ngIf="inp.type == 'check'">{{inp.name}}</md-checkbox>
-            <!-- select -->
-            <md-select *ngIf="inp.type=='select'" placeholder="{{inp.name}}">
-                <md-option *ngFor="let opt of inp.options" [value]="opt.value">{{ opt.label }}</md-option>
-            </md-select>
-
+            <div [ngSwitch]="inp.type">
+                <md-input-container *ngSwitchCase="'text'">
+                    <input mdInput placeholder="{{inp.name}}">
+                </md-input-container>
+                <md-input-container *ngSwitchCase="'number'">
+                    <input mdInput type="number" placeholder="{{inp.name}}">
+                </md-input-container>
+                <!-- radio button -->
+                <md-radio-group  *ngSwitchCase="'radio'">
+                    <md-radio-button *ngFor="let opt of inp.options" value="{{opt.value}}">{{opt.label}}</md-radio-button>
+                </md-radio-group>
+                <!-- checkbox -->
+                <md-checkbox  *ngSwitchCase="'check'">{{inp.name}}</md-checkbox>
+                <!-- select -->
+                <md-select  *ngSwitchCase="'select'" placeholder="{{inp.name}}">
+                    <md-option *ngFor="let opt of inp.options" [value]="opt.value">{{ opt.label }}</md-option>
+                </md-select>
+            </div>
         </div>
     </md-tab>
 </md-tab-group>
