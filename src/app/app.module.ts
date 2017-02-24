@@ -28,7 +28,6 @@ import {MasterDataService} from './services/procedure_flow/master-data.service';
 import {ProcedureService} from './services/procedure_flow/procedure.service';
 import {UserService} from './services/user.service';
 import {ApiService} from './services/api.service';
-import {MyFormSubComponent} from "./components/procedure_flow/form.sub-component";
 
 const appRoutes: Routes = [
     {path: '', component: ProcedureListComponent},
