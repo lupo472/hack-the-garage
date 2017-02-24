@@ -1,12 +1,13 @@
 declare let jsPDF : any;
 import {Component} from "@angular/core";
+import {MasterData} from '../model/master-data';
 
 @Component({
     selector: 'pdf',
     templateUrl: '/app/pages/pdf.template.html'
 })
 
-export class DocSection {
+export class PdfComponent {
 
     constructor() {
 

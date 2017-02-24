@@ -11,9 +11,7 @@ import {HomeComponent}  from './page_components/home.component';
 import {ListComponent}  from './page_components/list.component';
 import {LoginComponent}  from './page_components/login.component';
 import {RegisterComponent}  from './page_components/register.component';
-import {DocSection} from './page_components/pdf.component';
-
-
+import {PdfComponent} from './page_components/pdf.component';
 import {ProcedureFlowComponent}  from './components/procedure_flow/procedure-flow.component';
 import {MasterDataComponent}  from './components/procedure_flow/master-data.component';
 import {ProjectPlanComponent}  from './components/procedure_flow/project-plan.component';
@@ -50,7 +48,7 @@ const appRoutes: Routes = [
     ProcedureFlowComponent,
     MasterDataComponent,
     ProjectPlanComponent,
-    DocSection
+    PdfComponent
   ],
   providers: [  //import services globally into project
     LangService,

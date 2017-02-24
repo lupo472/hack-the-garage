@@ -1,8 +1,62 @@
 <md-card>
-    <md-input-container>
-        <input mdInput placeholder="Nome">
-    </md-input-container>
-    <md-input-container>
-        <input mdInput placeholder="Cognome">
-    </md-input-container>
+    <div [hidden]="submitted">
+        <h1>Anagrafica</h1>
+        <form (ngSubmit)="onSubmit()" #anagrafica="ngForm">
+            <div class="form-group">
+                <label for="first_name">Nome</label>
+                <md-input-container>
+                    <input mdInput class="form-control" id="first_name" placeholder="Nome" required>
+                </md-input-container>
+                <label for="last_name">Cognome</label>
+                <md-input-container>
+                    <input mdInput class="form-control" id="last_name" placeholder="Cognome" required>
+                </md-input-container>
+                <label for="birth_country">Paese di nascita</label>
+                <md-input-container>
+                    <input mdInput class="form-control" id="birth_country" placeholder="Paese di nascita" required>
+                </md-input-container>
+                <label for="birth_city">Città di nascita</label>
+                <md-input-container>
+                    <input mdInput class="form-control" id="birth_city" placeholder="Città di nascita" required>
+                </md-input-container>
+                <label for="birth_date">Data di nascita</label>
+                <md-input-container>
+                    <input mdInput class="form-control" id="birth_date" placeholder="Data di nascita" required>
+                </md-input-container>
+                <label for="tax_code">Codice fiscale</label>
+                <md-input-container>
+                    <input mdInput class="form-control" id="tax_code" placeholder="Codice fiscale" required>
+                </md-input-container>
+                <label for="VAT">Partita IVA</label>
+                <md-input-container>
+                    <input mdInput class="form-control" id="VAT" placeholder="Partita IVA" required>
+                </md-input-container>
+                <label for="country">Paese di residenza</label>
+                <md-input-container>
+                    <input mdInput class="form-control" id="country" placeholder="Paese di residenza" required>
+                </md-input-container>
+                <label for="city">Città di residenza</label>
+                <md-input-container>
+                    <input mdInput class="form-control" id="city" placeholder="Città di residenza" required>
+                </md-input-container>
+                <label for="address">Indirizzo</label>
+                <md-input-container>
+                    <input mdInput class="form-control" id="address" placeholder="Indirizzo"required>
+                </md-input-container>
+                <label for="postal_code">Codice postale</label>
+                <md-input-container>
+                    <input mdInput class="form-control" id="postal_code" placeholder="Codice postale" required>
+                </md-input-container>
+                <label for="phone">Telefono</label>
+                <md-input-container>
+                    <input mdInput class="form-control" id="phone" placeholder="Telefono" required>
+                </md-input-container>
+                <label for="email">E-mail</label>
+                <md-input-container>
+                    <input mdInput class="form-control" id="email" placeholder="E-mail" required>
+                </md-input-container>
+                <button md-raise-button type="button" [disabled]="!anagrafica.form.valid">Invia</button>
+            </div>
+        </form>
+    </div>
 </md-card>
