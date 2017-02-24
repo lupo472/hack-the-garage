@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 import { ProcedureFlowService } from "../../services/procedure_flow/procedure-flow.service"
 import { ProcedureService } from "../../services/procedure_flow/procedure.service"
@@ -21,13 +21,14 @@ export class ProcedureFlowComponent implements OnInit {
         private flowService: ProcedureFlowService,
         private procedureService: ProcedureService,
         private route: ActivatedRoute,
-        private projectPlanService: ProjectPlanService
+        private projectPlanService: ProjectPlanService,
+        private router: Router,
     ) { }
 
     ngOnInit() {
         this.procedureService.getProcedure(this.route.snapshot.params["id"]).subscribe(
             proc => this.flowService.loadProcedure(proc),
         );
-        this.projectPlanService.loadProjectTemplate("/hackthegarage.appspot.com/project_template/industrial.json");
+        if (!this.projectPlanService.isReady()) this.router.navigate([""]);
     }
 }

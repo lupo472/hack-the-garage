@@ -8,11 +8,13 @@ export class ProjectPlanService {
        private backend: ApiService
     ) { }
 
-    getTemplateResponse: any;
+    private templateCache: any = new Object();
+    private ready: boolean = false;
 
     //logic goes here
-    getProjectTemplate() {
-        return [
+    getProjectTemplate(code: string) {
+        return this.templateCache[code] || [];
+                /*
                 {
                     "name": "Tab1",
                     "inputs": [
@@ -67,12 +69,23 @@ export class ProjectPlanService {
                         }
                     ]
                 }
-            ];
+            ];*/
     }
 
-    loadProjectTemplate(templateId: string){
-        this.backend.getTemplateProject(templateId).map((data)=> { return JSON.parse(data); }).subscribe(
-            (data)=> {this.getTemplateResponse = data;}
+    cacheAll(){
+        this.backend.getProjectTypeList().subscribe(
+            (list)=> {
+                for (var i of list) this.cacheTemplate(i.id);
+            }
+        );
+    }
+    isReady() { return this.ready; }
+    private cacheTemplate(id:string) {
+        this.backend.getTemplateProject(id).map((data)=> { return JSON.parse(data); }).subscribe(
+            (data)=> {
+                this.templateCache[id] = data;
+                this.ready = true;
+            }
         );
     }
 }
