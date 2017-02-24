@@ -35,6 +35,14 @@ export class ProcedureService {
         return this.backend.getProjectTypeList();
     }
     
+    updateProcedure(procedureId: number, procedureTitle: string, procedureData: Procedure){
+        return this.backend.updateProcedure(procedureId, procedureTitle, procedureData);
+    }
+
+    deleteProcedure(procedureId: number){
+        return this.backend.deleteProcedure(procedureId);
+    }
+
     getErrorMessage():String{
         return this.errorMessage;
     }

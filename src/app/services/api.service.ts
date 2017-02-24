@@ -87,6 +87,25 @@ export class ApiService {
                         .catch(this.handleError);
     }
     
+    updateProcedure(procedureId: number, procedureTitle: string, procedureData: Procedure): Observable<any> {
+        return this.http.post(this.apiUrl + "update_procedure",
+                        {
+                            id: procedureId,
+                            procedure_data: JSON.stringify(procedureData),
+                            title: procedureTitle
+                        })
+                        .map(this.extractData)
+                        .catch(this.handleError);
+    }
+
+    deleteProcedure(procedureId: number): Observable<any> {
+        return this.http.post(this.apiUrl + "delete_procedure",
+                            {
+                                id: procedureId
+                            })
+                            .map(this.extractData)
+                            .catch(this.handleError);
+    }
 
 
 
