@@ -1,3 +1,26 @@
+body {
+    margin: 0px;
+}
+
 .example-sidenav {
     width: 75%;
+}
+
+md-icon#hamburger {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    body {
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        min-height: 600px;
+    }
+
+    md-icon#hamburger {
+        display: block;
+    }
 }
