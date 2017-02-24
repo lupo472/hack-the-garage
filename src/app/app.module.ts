@@ -30,11 +30,11 @@ import { UserService } from './services/user.service';
 import { ApiService } from './services/api.service';
 
 const appRoutes: Routes = [
-    {path: '', component: HomeComponent},
+    {path: '', component: ProcedureListComponent},
     {path: 'list', component: ListComponent},
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
-    {path: 'procedure', component: HomeComponent},
+    {path: 'procedure/:id', component: HomeComponent},
 ];
 
 @NgModule({
