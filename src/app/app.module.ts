@@ -58,7 +58,6 @@ const appRoutes: Routes = [
         ProcedureListComponent,
         MasterDataComponent,
         ProjectPlanComponent,
-        MyFormSubComponent,
         PdfComponent
     ],
     providers: [  //import services globally into project
