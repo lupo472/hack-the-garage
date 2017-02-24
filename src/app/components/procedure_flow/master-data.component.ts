@@ -76,7 +76,7 @@ export class MasterDataComponent implements OnInit {
                 phone: data.companyPhone,
                 email: data.companyEmail
             };
-            console.log(this.procedureFlow.temp.masterData.applicant);
+            console.log(this.procedureFlow.temp.masterData.company);
         });
     }
 
