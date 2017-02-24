@@ -113,9 +113,32 @@ export class ApiService {
                                id: templateId 
                             })
                             .map(this.extractData)
-                            .catch(this.handleError)
+                            .catch(this.handleError);
     }
 
+    signUp(email: string, firstName: string, lastName: string, password: string): Observable<any>{
+        return this.http.post(this.apiUrl + "sign_up",
+                            {
+                                email: email,
+                                first_name: firstName,
+                                last_name: lastName,
+                                password: password
+                            })
+                            .map(this.extractData)
+                            .catch(this.handleError);
+    }
+
+    login(email: string, password: string): Observable<any> {
+        return this.http.post(this.apiUrl + "login", 
+                            {
+                                email: email,
+                                password: password
+                            })
+                            .map(this.extractData)
+                            .catch(this.handleError);
+    }
+
+    
 
     private extractData(res: Response) {
         let body = res.json();

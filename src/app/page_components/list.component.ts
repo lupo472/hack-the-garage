@@ -18,6 +18,10 @@ export class ListComponent implements OnInit {
     projectTypes: any;
     procedureUpdate:any;
     procedureDelete: any;
+    userLoginSuccess: any;
+    userLoginFail: any;
+    userSignupSuccess: any;
+    userSignupFail: any;
 
 
     ngOnInit() {
@@ -44,8 +48,23 @@ export class ListComponent implements OnInit {
             update => this.procedureUpdate = update,
         );
 */
-       
+/*
+       this.userService.userLogin("l@l.com","123").subscribe(
+            response => this.userLoginSuccess = response,
+       );
 
+       this.userService.userLogin("l@l.com", "1234").subscribe(
+            response => this.userLoginFail = response,
+       );
+
+       this.userService.userSignUp("p@p.com", "Piccolo", "Pippo", "12345").subscribe(
+           response => this.userSignupSuccess = response,
+       );
+
+       this.userService.userSignUp("l@l.com", "Luc", "Luc", "123").subscribe(
+           response => this.userSignupFail = response,
+       );
+       */
 
     }
 }

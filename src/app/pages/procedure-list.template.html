@@ -1,11 +1,36 @@
+<div style= "text-align:center;vertical-align: middle;" >
+
+<md-card style="display: inline-block;" >
+    <h1 style="
+text-align:center; 
+font-weight: 200; 
+color:#00695c;
+">Procedures</h1>
+
 <md-list>
-    <md-list-item *ngFor="let item of procs" ><button md-button routerLink="/procedure/{{item.id}}">procedure no. {{ item.id }} : {{ item.name }}</button></md-list-item>
+    <md-list-item *ngFor="let item of procs" ><md-icon style="color:#004d40;font-size: 40px;" md-list-avatar>assignment</md-icon><button md-button routerLink="/procedure/{{item.id}}">procedure no. {{ item.id }} : {{ item.name }}</button></md-list-item>
 </md-list>
 
+</md-card>
+
+</div>
 <a md-fab routerLink="/new-procedure"style="
     position: fixed;
     right: 0px;
     bottom: 0px;
     margin-bottom: 18px;
-    margin-right: 18px;" ><md-icon>note_add</md-icon></a>
+    margin-right: 18px;" >
+    <md-icon>note_add</md-icon></a>
 
+
+<!--<md-list>
+  <h3 md-subheader>Procedure</h3>
+  <md-list-item *ngFor="let item of procs">
+        <button md-button routerLink="/procedure/{{item.id}}"><md-icon style="color:#004d40;" md-list-avatar>assignment</md-icon></button>
+        <h4 md-line>{{item.id}}</h4>
+        <p md-line> procedure no. {{ item.id }} : {{ item.name }}</p>
+    
+  </md-list-item>
+</md-list>
+
+-->
