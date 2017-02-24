@@ -12,50 +12,28 @@ import { MasterData } from "../../model/master-data"
 })
 export class MasterDataComponent {
 
-    form: FormGroup;
+    anagrafica: FormGroup = this.fb.group({
+        firstName: ['', Validators.required],
+        lastName: ['', Validators.required],
+        birthCountry: ['', Validators.required],
+        birthCity: ['', Validators.required],
+        birthDate: ['', Validators.required],
+        taxCode: ['', Validators.required],
+        country: ['', Validators.required],
+        city: ['', Validators.required],
+        address: ['', Validators.required],
+        postalCode: ['', Validators.required],
+        phone: ['', Validators.required],
+        email: ['', Validators.pattern('/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/')]
+    });
+
     submitted: boolean = false;
-    valid: boolean = true;
 
     constructor (private fb: FormBuilder,
                  private procedureFlow : ProcedureFlowService) {
-        this.createForm();
-    }
-
-    createForm() {
-        this.form = this.fb.group({
-            firstName: '',
-            lastName: '',
-            birthCountry: '',
-            birthCity: '',
-            birthDate: '',
-            taxCode: '',
-            country: '',
-            city: '',
-            address: {},
-            postalCode: '',
-            phone: '',
-            email: ''
-        })
-    }
-
-    ngOnChanges () {
-        this.form.reset({
-            firstName: '',
-            lastName: '',
-            birthCountry: '',
-            birthCity: '',
-            birthDate: '',
-            taxCode: '',
-            country: '',
-            city: '',
-            address: {},
-            postalCode: '',
-            phone: '',
-            email: ''
-        });
     }
 
     onSubmit() {
-        this.submitted = false;
+        this.submitted = true;
     }
 }
