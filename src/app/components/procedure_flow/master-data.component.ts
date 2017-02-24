@@ -31,6 +31,7 @@ export class MasterDataComponent {
 
     constructor (private fb: FormBuilder,
                  private procedureFlow : ProcedureFlowService) {
+        this.procedureFlow.procedure.masterData.applicant = this.anagrafica.getRawValue();
     }
 
     onSubmit() {

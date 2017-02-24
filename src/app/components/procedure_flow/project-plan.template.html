@@ -1,7 +1,8 @@
 <md-tab-group>
     <md-tab *ngFor="let tab of projectPlan" label="{{tab.name}}">
-        
+
         <div *ngFor="let inp of tab.inputs">
+
 
             <md-input-container *ngIf="inp.type == 'text' || inp.type == 'number'">
                 <input mdInput *ngIf="inp.type == 'text'" placeholder="{{inp.name}}">
@@ -22,3 +23,15 @@
         </div>
     </md-tab>
 </md-tab-group>
+
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
+    <div formArrayName="formArray">
+        <div *ngFor="let control of myForm.controls['formArray'].controls; let i = index">
+            <my-form-sub-component [myForm]="myForm.controls.formArray.controls[i]"></my-form-sub-component>
+        </div>
+    </div>
+    <button type="submit" [disabled]="!myForm.valid">Save</button>
+</form>
+
+
