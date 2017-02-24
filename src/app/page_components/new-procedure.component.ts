@@ -8,7 +8,7 @@ import {Procedure} from "../model/procedure"
 
 @Component( {
     selector: "new-procedure",
-    templateUrl: "../pages/new-procedure.template.html"
+    templateUrl: "/app/pages/new-procedure.template.html"
 })
 export class NewProcedureComponent implements OnInit {
     constructor (
