@@ -4,6 +4,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpModule} from '@angular/http';
 import {MaterialModule} from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 //import components
 import {AppComponent} from './app.component';
@@ -11,9 +13,7 @@ import {HomeComponent}  from './page_components/home.component';
 import {ListComponent}  from './page_components/list.component';
 import {LoginComponent}  from './page_components/login.component';
 import {RegisterComponent}  from './page_components/register.component';
-import {DocSection} from './page_components/pdf.component';
-
-
+import {PdfComponent} from './page_components/pdf.component';
 import {ProcedureFlowComponent}  from './components/procedure_flow/procedure-flow.component';
 import {MasterDataComponent}  from './components/procedure_flow/master-data.component';
 import {ProjectPlanComponent}  from './components/procedure_flow/project-plan.component';
@@ -26,7 +26,7 @@ import { ProjectPlanService } from './services/procedure_flow/project-plan.servi
 import { MasterDataService } from './services/procedure_flow/master-data.service';
 import { ProcedureService } from './services/procedure_flow/procedure.service';
 import { UserService } from './services/user.service';
-import { ApiService } from './services/api.service'
+import { ApiService } from './services/api.service';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -40,7 +40,9 @@ const appRoutes: Routes = [
     BrowserModule, 
     RouterModule.forRoot(appRoutes),
     HttpModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [ //components globally declared into project
     HomeComponent, 
@@ -51,7 +53,7 @@ const appRoutes: Routes = [
     ProcedureFlowComponent,
     MasterDataComponent,
     ProjectPlanComponent,
-    DocSection
+    PdfComponent
   ],
   providers: [  //import services globally into project
     LangService,
