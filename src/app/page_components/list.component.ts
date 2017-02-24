@@ -15,12 +15,19 @@ export class ListComponent implements OnInit {
     }
     items: any;
     save: string;
+    projectTypes: any;
+    procedureUpdate:any;
+    procedureDelete: any;
 
 
     ngOnInit() {
+/*
+         this.procedureService.deleteProcedure(5659313586569216).subscribe(
+            deleted => this.procedureDelete = deleted,
+        );
 
        this.procedureService.getProcedureList().subscribe(
-            procedure => this.items = procedure,
+            procedures => this.items = procedures,
         );
 
 
@@ -28,5 +35,17 @@ export class ListComponent implements OnInit {
         this.procedureService.saveProcedure(proc).subscribe(
             data => this.save = "Salvata Procedure",
         );
+
+        this.procedureService.getProjectTypeList().subscribe(
+            projects => this.projectTypes = projects,
+        );
+
+        this.procedureService.updateProcedure(5109799364591616,"Titolo riaggiornato", new Procedure()).subscribe(
+            update => this.procedureUpdate = update,
+        );
+*/
+       
+
+
     }
 }
