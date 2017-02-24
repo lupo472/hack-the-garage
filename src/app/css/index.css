@@ -6,6 +6,14 @@ body {
     width: 75%;
 }
 
+.command-button-container {
+    position: relative;
+}
+
+.command-button {
+    float: right;
+}
+
 md-icon#hamburger {
     display: none;
 }

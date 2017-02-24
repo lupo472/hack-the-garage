@@ -6,11 +6,13 @@
     left: 0px;
     right: 0px;" 
     class="example-container">
-  <md-toolbar color="primary">
+  <md-toolbar color="primary" *ngIf="state() == 'standard'">
     <md-icon id="hamburger" (click)="sidenav.open()">&#xE5D2;</md-icon>
     <button md-button routerLink="/login">Login</button>
     <button md-button routerLink="/register">Register</button>
     <button md-button routerLink="/">Home</button>
+  </md-toolbar>
+  <md-toolbar color="primary" *ngIf="state() != 'standard'">
   </md-toolbar>
 
   <md-sidenav #sidenav class="example-sidenav">

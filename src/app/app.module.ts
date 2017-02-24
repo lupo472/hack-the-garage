@@ -28,6 +28,7 @@ import {ProjectPlanService} from './services/procedure_flow/project-plan.service
 import {MasterDataService} from './services/procedure_flow/master-data.service';
 import {ProcedureService} from './services/procedure_flow/procedure.service';
 import {UserService} from './services/user.service';
+import {StatusService} from './services/status.service';
 import {ApiService} from './services/api.service';
 
 const appRoutes: Routes = [
@@ -69,7 +70,8 @@ const appRoutes: Routes = [
         ProcedureService,
         ProjectPlanService,
         UserService,
-        ApiService
+        ApiService,
+        StatusService
     ],
     bootstrap: [AppComponent]
 })
