@@ -18,11 +18,9 @@ export class ProjectPlanComponent implements OnInit {
 
     ngOnInit() {
         this.projectPlan = this.projectPlanService.getProjectPlan();
-        for ()
 
     }
     onSubmit(): void {
-        console.log(this.myForm.value);
         // Your form value is outputted as a JavaScript object.
         // Parse it as JSON or take the values necessary to use as you like
     }
