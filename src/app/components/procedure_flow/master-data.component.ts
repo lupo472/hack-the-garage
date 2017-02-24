@@ -56,6 +56,6 @@ export class MasterDataComponent {
     }
 
     onSubmit() {
-
+        this.submitted = false;
     }
 }
