@@ -1,14 +1,17 @@
 <a style="background-color: #4db6ac;color:#fff;" md-raised-button (click) ="download()">Download PDF </a>
 
 
-    <input type="file" (change)="fileChangeEvent($event,1)" placeholder="Upload file..." />
-        <input type="file" (change)="fileChangeEvent($event,2)" placeholder="Upload file..." />
-            <input type="file" (change)="fileChangeEvent($event,3)" placeholder="Upload file..." />
+    <input style="display:none" id="file1" type="file" (change)="fileChangeEvent($event,1)" placeholder="Upload file..." />
+    <input style="display:none" id="file2" type="file" (change)="fileChangeEvent($event,2)" placeholder="Upload file..." />
+    <input style="display:none" id="file3" type="file" (change)="fileChangeEvent($event,3)" placeholder="Upload file..." />
 
 
-  
 
+<a style="background-color: #4db6ac;color:#fff;" md-raised-button (click) ="download('file1')">Carica Report Firmato</a>
 
+<a style="background-color: #4db6ac;color:#fff;" md-raised-button (click) ="download('file2')">Carica Carta di Identità</a>
+
+<a style="background-color: #4db6ac;color:#fff;" md-raised-button (click) ="download('file3')">Carica Autocertificazione</a>
 
 
 <style>

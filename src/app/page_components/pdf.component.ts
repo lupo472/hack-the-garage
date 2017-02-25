@@ -20,6 +20,11 @@ export class PdfComponent {
         private fileService: FileService,
         private route: ActivatedRoute,
         ) { }
+
+        download(id:string) {
+            document.getElementById(id).click();
+        }
+
     fileChangeEvent(fileInput: any, id: number) {
         let reader: FileReader = new FileReader();
         let file: any;
