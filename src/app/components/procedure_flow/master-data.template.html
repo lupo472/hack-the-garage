@@ -1,52 +1,57 @@
-<md-card>
+<md-card style="
+    position: inherit;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    margin-left: 10px;
+    margin-right: 10px;">
     <md-tab-group>
         <md-tab label="Dati cliente">
             <div [formGroup]="applicantForm">
-                <md-input-container>
+                <md-input-container style="margin-top: 10px;" >
                     <input mdInput formControlName="applicantFirstName" class="form-control" name="first_name"
                            placeholder="Nome">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;">
                     <input mdInput formControlName="applicantLastName" class="form-control" name="last_name"
                            placeholder="Cognome">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;">
                     <input mdInput formControlName="applicantBirthCountry" class="form-control" name="birth_country"
                            placeholder="Paese di nascita">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;">
                     <input mdInput formControlName="applicantBirthCity" class="form-control" name="birth_city"
                            placeholder="Città di nascita">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;">
                     <input mdInput formControlName="applicantBirthDate" class="form-control" name="birth_date"
                            placeholder="Data di nascita">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;" >
                     <input mdInput formControlName="applicantTaxCode" class="form-control" name="tax_code"
                            placeholder="Codice fiscale">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;" >
                     <input mdInput formControlName="applicantCountry" class="form-control" name="country"
                            placeholder="Paese di residenza">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;">
                     <input mdInput formControlName="applicantCity" class="form-control" name="city"
                            placeholder="Città di residenza">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;" >
                     <input mdInput formControlName="applicantAddress" class="form-control" name="address"
                            placeholder="Indirizzo">
-                </md-input-container>
-                <md-input-container>
+                </md-input-container >
+                <md-input-container  style="margin-top: 10px;">
                     <input mdInput formControlName="applicantPostalCode" class="form-control" name="postal_code"
                            placeholder="Codice postale">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;">
                     <input mdInput formControlName="applicantPhone" class="form-control" name="phone"
                            placeholder="Telefono">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;">
                     <input mdInput formControlName="applicantEmail" class="form-control" name="email" type="email"
                            placeholder="E-mail">
                 </md-input-container>
@@ -54,31 +59,31 @@
         </md-tab>
         <md-tab label="Dati azienda">
             <div [formGroup]="companyForm">
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;">
                     <input mdInput formControlName="companyName" class="form-control" name="company_name"
                            placeholder="Nome">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;">
                     <input mdInput formControlName="companyVat" class="form-control" name="vat"
                            placeholder="Partita IVA">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;">
                     <input mdInput formControlName="companyCountry" class="form-control" name="company_country"
                            placeholder="Paese">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;">
                     <input mdInput formControlName="companyAddress" class="form-control" name="company_address"
                            placeholder="Indirizzo">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;">
                     <input mdInput formControlName="companyPostalCode" class="form-control" name="company_postal_code"
                            placeholder="Codice postale">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;">
                     <input mdInput formControlName="companyPhone" class="form-control" name="company_phone"
                            placeholder="Telefono">
                 </md-input-container>
-                <md-input-container>
+                <md-input-container  style="margin-top: 10px;">
                     <input mdInput formControlName="companyEmail" class="form-control" name="company_email"
                            placeholder="E-mail">
                 </md-input-container>
