@@ -20,6 +20,7 @@ import {ProcedureFlowComponent}  from './components/procedure_flow/procedure-flo
 import {MasterDataComponent}  from './components/procedure_flow/master-data.component';
 import {ProjectPlanComponent}  from './components/procedure_flow/project-plan.component';
 import {WelcomeComponent} from './page_components/welcome.component';
+import {ReportComponent} from './components/procedure_flow/report.component';
 
 //import services
 import {LangService} from './services/lang.service';
@@ -31,6 +32,9 @@ import {UserService} from './services/user.service';
 import {StatusService} from './services/status.service';
 import {ApiService} from './services/api.service';
 import {FileService} from './services/file.service';
+
+//import pipes
+import { KeysPipe } from './pipes/keys.pipe';
 
 
 const appRoutes: Routes = [
@@ -66,7 +70,10 @@ const appRoutes: Routes = [
         MasterDataComponent,
         ProjectPlanComponent,
         PdfComponent,
-        WelcomeComponent
+        WelcomeComponent,
+        ReportComponent,
+
+        KeysPipe
     ],
     providers: [  //import services globally into project
         LangService,
