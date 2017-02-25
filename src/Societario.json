@@ -1,0 +1,393 @@
+[
+    {
+        "nome": "Sezione A - Dati Anagrafici",
+        "key": "1_sezioneA",
+        "schede": [
+            {
+                "nome": "Anagrafica Richiedente",
+                "key": "2_schedaAnagraficaRichiedente",
+                "sezioni": [
+                    {
+                        "nome": "Dati Anagrafici",
+                        "key": "3_paragrafoDatiAnagrafici",
+                        "input": [
+                            {
+                                "key": "4_cognome",
+                                "nome": "Cognome",
+                                "type": "text"
+                            },
+                            {
+                                "key": "5_nome",
+                                "nome": "Nome",
+                                "type": "text"
+                            },
+                            {
+                                "key": "6_data_nascita",
+                                "nome": "Data di Nascita",
+                                "type": "text"
+                            },
+                            {
+                                "key": "7_cf",
+                                "nome": "Codice Fiscale",
+                                "type": "text"
+                            },
+                            {
+                                "key": "8_sesso",
+                                "nome": "Sesso",
+                                "type": "text"
+                            },
+                            {
+                                "key": "9_luogo_nascita",
+                                "nome": "Nato A",
+                                "type": "text"
+                            },
+                            {
+                                "key": "10_nazione_cittadinanza",
+                                "nome": "Cittadinanza",
+                                "type": "text"
+                            },
+                            {
+                                "key": "11_nazione_nascita",
+                                "nome": "Nazione di nascita",
+                                "type": "text"
+                            },
+                            {
+                                "key": "12_titolo_studio",
+                                "nome": "Titolo di studio",
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    {
+                        "nome": "Dati di Residenza",
+                        "key": "13_paragrafoDatiResidenza",
+                        "input": [
+                           
+                            {
+                                "key": "14_comune",
+                                "nome": "Comune",
+                                "type": "text"
+                            },
+                            {
+                                "key": "15_cap",
+                                "nome": "cap",
+                                "type": "text"
+                            },
+                            {
+                                "key": "16_indirizzo",
+                                "nome": "Indirizzo",
+                                "type": "text"
+                            },
+                            {
+                                "key": "17_nazione",
+                                "nome": "Nazione",
+                                "type": "text"
+                            },
+                            {
+                                "key": "18_tipo_indirizzo",
+                                "nome": "Tipo di indirizzo (Via,Piazza, Corso, …, numero civico)",
+                                "type": "text"
+                            },
+                            {
+                                "key": "19_numero_civico",
+                                "nome": "Numero Civico",
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    {
+                        "nome": "Dati Documento",
+                        "key": "20_paragrafoDatiDocumento",
+                        "input": [
+                            {
+                                "key": "21_documento_riconoscimento",
+                                "nome": "Documento di riconoscimento",
+                                "type": "text"
+                            },
+                            {
+                                "key": "22_numero_documento",
+                                "nome": "Numero Documento",
+                                "type": "text"
+                            },
+                            {
+                                "key": "23_data_scadenza",
+                                "nome": "Data scadenza",
+                                "type": "text"
+                            },
+                            {
+                                "key": "24_data_rilascio",
+                                "nome": "Data di Rilascio",
+                                "type": "text"
+                            },
+                            {
+                                "key": "25_quota_partecipazione",
+                                "nome": "Quota di partecipazione (%)",
+                                "type": "text"
+                            }
+                        ]
+                    }
+                ]
+            }
+
+        ]
+    },
+    {
+        "nome": "Sezione B - Dati anagrafici società",
+        "key": "26_sezioneB",
+        "schede": [
+            {
+                "nome": "Anagrafica società",
+                "key": "27_schedaAnagraficaRichiedente",
+                "sezioni": [
+                     {
+                        "nome": "Dati anagrafici provvisori società",
+                        "key": "28_paragrafoDatiAnagraficiProvvisoriSocieta",
+                        "input": [
+                            {
+                                "key": "29_denominazione_impresa",
+                                "nome": "Denominazione Impresa",
+                                "type": "text"
+                            },
+                            {
+                                "key": "30_forma_giuridica",
+                                "nome": "Forma giuridica",
+                                "type": "text"
+                            },
+                            {
+                                "key": "31_capitale_sociale",
+                                "nome": "Capitale sociale",
+                                "type": "text"
+                            },
+                            {
+                                "key": "32_numero_soci",
+                                "nome": "Numero soci",
+                                "type": "text"
+                            }
+                        ]
+                     },
+                     {
+                        "nome": "Sede legale",
+                        "key": "33_paragrafoSedeLegale",
+                        "input": [
+                            {
+                                "key": "34_regione",
+                                "nome": "Regione",
+                                "type": "text"
+                            },
+                            {
+                                "key": "35_provincia",
+                                "nome": "Provincia",
+                                "type": "text"
+                            },
+                            {
+                                "key": "36_comune",
+                                "nome": "Comune",
+                                "type": "text"
+                            },
+                            {
+                                "key": "37_sede_legale_come_sede_operativa",
+                                "nome": "Sede legale coincide come sede operativa",
+                                "type": "check"
+                            }
+                        ]
+                     },
+                     {
+                        "nome": "Sede operativa",
+                        "key": "38_paragrafoSedeOperativa",
+                        "input": [
+                            {
+                                "key": "39_regione",
+                                "nome": "Regione",
+                                "type": "text"
+                            },
+                            {
+                                "key": "40_provincia",
+                                "nome": "Provincia",
+                                "type": "text"
+                            },
+                            {
+                                "key": "41_comune",
+                                "nome": "Comune",
+                                "type": "text"
+                            }
+                        ]
+                     }
+                ]
+            }
+        ]
+    },
+    {
+        "nome": "Sezione C - Dati anagrafici programma",
+        "key": "42_sezioneC",
+        "schede": [
+            {
+                "nome": "Anagrafica Programma",
+                "key": "43_schedaAnagraficaProgramma",
+                "sezioni": [
+                    {
+                        "nome": "Dati anagrafici",
+                        "key": "44_paragrafoDatiAnagrafici",
+                        "input": [
+                            {
+                                "key": "45_descrizione_programma",
+                                "nome": "Descrizione Programma",
+                                "type": "text"
+                            },
+                            {
+                                "key": "46_data_rilascio",
+                                "nome": "Data rilascio programma",
+                                "type": "text"
+                            },
+                            {
+                                "key": "47_range_somma_prestito",
+                                "nome": "Range somma prestito (€)",
+                                "type": "text"
+                            },
+                            {
+                                "key": "48_codice_prestito",
+                                "nome": "Codice Prestito",
+                                "type": "text"
+                            },
+                            {
+                                "key": "49_descrizione_codice_inserito",
+                                "nome": "Descrizione codice inserito",
+                                "type": "text"
+                            },
+                            {
+                                "key": "50_regione",
+                                "nome": "Regione",
+                                "type": "text"
+                            },
+                            {
+                                "key": "51_provincia",
+                                "nome": "Provincia",
+                                "type": "text"
+                            },
+                            {
+                                "key": "52_comune",
+                                "nome": "Comune",
+                                "type": "text"
+                            },
+                            {
+                                "key": "53_impresa_femminile",
+                                "nome": "Impresa femminile",
+                                "type": "check"
+                            },
+                            {
+                                "key": "54_impresa_giovanile",
+                                "nome": "Impresa giovanile",
+                                "type": "check"
+                            },
+                            {
+                                "key": "55_concessione_prestiti_minimis_36_mesi",
+                                "nome": "Concessione altri prestiti de minimis ultimi 36 mesi?",
+                                "type": "select",
+                                "options": [
+                                    {
+                                        "label": "Si",
+                                        "value": "si"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "no"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "56_importo_aiuti_minimis",
+                                "nome": "Importo altri aiuti de minimis concessi nel periodo (€)",
+                                "type": "check"
+                            }  
+                            
+                        ]
+                    },
+                    {
+                        "nome": "Prestiti richiesti",
+                        "key": "57_paragrafoPrestitiRichiesti",
+                        "input": [
+                            {
+                                "key": "58_ECB",
+                                "nome": "ECB (€)",
+                                "type": "text"
+                            },
+                             {
+                                "key": "59_MN",
+                                "nome": "MN (€)",
+                                "type": "text"
+                            }  
+                        ]
+                    },
+                    {
+                        "nome": "Spese gestione richieste",
+                        "key": "60_paragrafoSpeseGestioneRichieste",
+                        "input": [
+                            {
+                                "key": "61_personale_interno_qualificato",
+                                "nome": "Personale interno qualificato [€]",
+                                "type": "text"
+                            },
+                             {
+                                "key": "62_servizi_accessori",
+                                "nome": "Servizi accessori [€]",
+                                "type": "text"
+                            },
+                            {
+                                "key": "63_consulenze",
+                                "nome": "Consulenze [€]",
+                                "type": "text"
+                            }
+                        ] 
+                    }   
+                ]
+            }
+        ]
+    },
+    {
+        "nome": "Sezione D - Dati anagrafici referente",
+        "key": "64_sezioneD",
+        "schede": [
+            {
+                "nome": "Anagrafica Referente",
+                "key": "65_schedaAnagraficaReferente",
+                "sezioni": [
+                     {
+                        "nome": "Anagrafica di contatto",
+                        "key": "66_paragrafoAnagraficaDiContatto",
+                        "input": [
+                             {
+                                "key": "67_cognome",
+                                "nome": "Cognome",
+                                "type": "text"
+                            },
+                            {
+                                "key": "68_nome",
+                                "nome": "Nome",
+                                "type": "text"
+                            },
+                            {
+                                "key": "69_telefono",
+                                "nome": "Telefono",
+                                "type": "text"
+                            },
+                            {
+                                "key": "70_pec",
+                                "nome": "Pec",
+                                "type": "text"
+                            },
+                            {
+                                "key": "71_altro_telefono",
+                                "nome": "Altro telefono",
+                                "type": "text"
+                            },
+                            {
+                                "key": "72_email",
+                                "nome": "Email",
+                                "type": "text"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
