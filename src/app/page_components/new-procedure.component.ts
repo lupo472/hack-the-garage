@@ -34,7 +34,7 @@ export class NewProcedureComponent implements OnInit {
             let firstLevelObj = {};
 
             for (let j = 0; j < nav.schede.length; j++) {
-                let scheda = nav.schede[i];
+                let scheda = nav.schede[j];
                 let secondLevelObj = {};
 
                 for (let k = 0; k < scheda.sezioni.length; k++) {
