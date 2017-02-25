@@ -1,25 +1,25 @@
-<md-tab-group>
-    <md-tab *ngFor="let sezione of projectPlan" label="{{sezione.nome}}">
-        <md-tab-group>
+<md-tab-group *ngIf="isReady()" [formGroup]="forms">
+    <md-tab *ngFor="let sezione of proj" label="{{sezione.nome}}">
+        <md-tab-group [formGroup]="forms.controls[sezione.key]">
             <md-tab *ngFor="let tab of sezione.schede" label="{{tab.nome}}">
-                <md-tab-group>
+                <md-tab-group [formGroup]="forms.controls[sezione.key].controls[tab.key]">
                     <md-tab *ngFor="let sez of tab.sezioni" label="{{sez.nome}}">
-                        <div *ngFor="let inp of sez.input">
+                        <div *ngFor="let inp of sez.input" [formGroup]="forms.controls[sezione.key].controls[tab.key].controls[sez.key]">
                             <div [ngSwitch]="inp.type">
                                 <md-input-container *ngSwitchCase="'text'">
-                                    <input mdInput placeholder="{{inp.nome}}" name="inp.key">
+                                    <input mdInput placeholder="{{inp.nome}}" formControlName="{{inp.key}}">
                                 </md-input-container>
                                 <md-input-container *ngSwitchCase="'number'">
-                                    <input mdInput type="number" placeholder="{{inp.nome}}">
+                                    <input mdInput type="number" placeholder="{{inp.nome}}" formControlName="{{inp.key}}">
                                 </md-input-container>
                                 <!-- radio button -->
-                                <md-radio-group  *ngSwitchCase="'radio'">
+                                <md-radio-group  *ngSwitchCase="'radio'" formControlName="{{inp.key}}">
                                     <md-radio-button *ngFor="let opt of inp.options" value="{{opt.value}}">{{opt.label}}</md-radio-button>
                                 </md-radio-group>
                                 <!-- checkbox -->
-                                <md-checkbox  *ngSwitchCase="'check'">{{inp.nome}}</md-checkbox>
+                                <md-checkbox  *ngSwitchCase="'check'" formControlName="{{inp.key}}">{{inp.nome}}</md-checkbox>
                                 <!-- select -->
-                                <md-select  *ngSwitchCase="'select'" placeholder="{{inp.nome}}">
+                                <md-select  *ngSwitchCase="'select'" placeholder="{{inp.nome}}" formControlName="{{inp.key}}">
                                     <md-option *ngFor="let opt of inp.options" [value]="opt.value">{{ opt.label }}</md-option>
                                 </md-select>
                             </div>

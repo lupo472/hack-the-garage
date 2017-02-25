@@ -17,43 +17,43 @@ export class ProjectPlanService {
         return [
     {
         "nome": "Sezione A - Dati Anagrafici",
-        "key": "sezioneA",
+        "key": "1_sezioneA",
         "schede": [
             {
                 "nome": "Soggetto del Prestito",
-                "key": "schedaSoggettoPrestito",
+                "key": "2_schedaSoggettoPrestito",
                 "sezioni": [
                     {
                         "nome": "Dati Anagrafici",
-                        "key": "paragrafoDatiAnagrafici",
+                        "key": "3_paragrafoDatiAnagrafici",
                         "input": [
                             {
-                                "key": "cognome",
+                                "key": "4_cognome",
                                 "nome": "Cognome",
                                 "type": "text"
                             },
                             {
-                                "key": "nome",
+                                "key": "5_nome",
                                 "nome": "Nome",
                                 "type": "text"
                             },
                             {
-                                "key": "data_nascita",
+                                "key": "6_data_nascita",
                                 "nome": "Data di Nascita",
                                 "type": "text"
                             },
                             {
-                                "key": "cf",
+                                "key": "7_cf",
                                 "nome": "Codice Fiscale",
                                 "type": "text"
                             },
                             {
-                                "key": "sesso",
+                                "key": "8_sesso",
                                 "nome": "Sesso",
                                 "type": "text"
                             },
                             {
-                                "key": "luogo_nascita",
+                                "key": "9_luogo_nascita",
                                 "nome": "Nato A",
                                 "type": "text"
                             }
@@ -61,30 +61,30 @@ export class ProjectPlanService {
                     },
                     {
                         "nome": "Dati di Residenza",
-                        "key": "paragrafoDatiResidenza",
+                        "key": "10_paragrafoDatiResidenza",
                         "input": [
                             {
-                                "key": "regione",
+                                "key": "11_regione",
                                 "nome": "Regione",
                                 "type": "text"
                             },
                             {
-                                "key": "provincia",
+                                "key": "12_provincia",
                                 "nome": "Provincia",
                                 "type": "text"
                             },
                             {
-                                "key": "comune",
+                                "key": "13_comune",
                                 "nome": "Comune",
                                 "type": "text"
                             },
                             {
-                                "key": "cap",
+                                "key": "14_cap",
                                 "nome": "cap",
                                 "type": "text"
                             },
                             {
-                                "key": "indirizzo",
+                                "key": "15_indirizzo",
                                 "nome": "Indirizzo",
                                 "type": "text"
                             }
@@ -92,30 +92,30 @@ export class ProjectPlanService {
                     },
                     {
                         "nome": "Dati Documento",
-                        "key": "paragrafoDatiDocumento",
+                        "key": "16_paragrafoDatiDocumento",
                         "input": [
                             {
-                                "key": "documento",
+                                "key": "17_documento",
                                 "nome": "Documento di Riconoscimento",
                                 "type": "text"
                             },
                             {
-                                "key": "numero_documento",
+                                "key": "18_numero_documento",
                                 "nome": "Numero Documento",
                                 "type": "text"
                             },
                             {
-                                "key": "ente_rilascio",
+                                "key": "19_ente_rilascio",
                                 "nome": "Rilasciato Da",
                                 "type": "text"
                             },
                             {
-                                "key": "data_scadenza",
+                                "key": "20_data_scadenza",
                                 "nome": "Data Scadenza",
                                 "type": "text"
                             },
                             {
-                                "key": "data_rilascio",
+                                "key": "21_data_rilascio",
                                 "nome": "Data Rilascio",
                                 "type": "text"
                             }
@@ -123,20 +123,20 @@ export class ProjectPlanService {
                     },
                     {
                         "nome": "Altre Informazioni",
-                        "key": "paragrafoAltreInformazioni",
+                        "key": "22_paragrafoAltreInformazioni",
                         "input": [
                             {
-                                "key": "titolo_studio",
+                                "key": "23_titolo_studio",
                                 "nome": "Titolo di Studio",
                                 "type": "text"
                             },
                             {
-                                "key": "data_adesione_precedente",
+                                "key": "24_data_adesione_precedente",
                                 "nome": "Data Adesione Precedente piano di prestito",
                                 "type": "text"
                             },
                             {
-                                "key": "attestato_idoneita",
+                                "key": "25_attestato_idoneita",
                                 "nome": "soggetto referente del prestito è in possesso dell'attestato di idoneità rilasciato dall'istituto di credito",
                                 "type": "select",
                                 "options": [
@@ -149,6 +149,21 @@ export class ProjectPlanService {
                                         "value": "no"
                                     }
                                 ]
+                            },
+                            {
+                                "key": "25bis_quota",
+                                "nome": "Quota",
+                                "type": "text"
+                            },
+                            {
+                                "key": "25bisbis_posizione",
+                                "nome": "Posizione",
+                                "type": "text"
+                            },
+                            {
+                                "key": "25bisbis_firma_digitale",
+                                "nome": "il soggetto referente del prestito è in possesso di un kit di firma digitale in corso di validità",
+                                "type": "check"
                             }
                         ]
                     }
@@ -156,39 +171,39 @@ export class ProjectPlanService {
             },
             {
                 "nome": "Soggetto Proponente",
-                "key": "schedaSoggettoProponente",
+                "key": "26_schedaSoggettoProponente",
                 "sezioni": [
                     {
                         "nome": "Dati Anagrafici",
-                        "key": "paragrafoDatiAnagrafici",
+                        "key": "27_paragrafoDatiAnagrafici",
                         "input": [
                             {
-                                "key": "cognome",
+                                "key": "28_cognome",
                                 "nome": "Cognome",
                                 "type": "text"
                             },
                             {
-                                "key": "nome",
+                                "key": "29_nome",
                                 "nome": "Nome",
                                 "type": "text"
                             },
                             {
-                                "key": "data_nascita",
+                                "key": "30_data_nascita",
                                 "nome": "Data di Nascita",
                                 "type": "text"
                             },
                             {
-                                "key": "cf",
+                                "key": "31_cf",
                                 "nome": "Codice Fiscale",
                                 "type": "text"
                             },
                             {
-                                "key": "sesso",
+                                "key": "32_sesso",
                                 "nome": "Sesso",
                                 "type": "text"
                             },
                             {
-                                "key": "luogo_nascita",
+                                "key": "33_luogo_nascita",
                                 "nome": "Nato A",
                                 "type": "text"
                             }
@@ -196,30 +211,30 @@ export class ProjectPlanService {
                     },
                     {
                         "nome": "Dati di Residenza",
-                        "key": "paragrafoDatiResidenza",
+                        "key": "34_paragrafoDatiResidenza",
                         "input": [
                             {
-                                "key": "regione",
+                                "key": "35_regione",
                                 "nome": "Regione",
                                 "type": "text"
                             },
                             {
-                                "key": "provincia",
+                                "key": "36_provincia",
                                 "nome": "Provincia",
                                 "type": "text"
                             },
                             {
-                                "key": "comune",
+                                "key": "37_comune",
                                 "nome": "Comune",
                                 "type": "text"
                             },
                             {
-                                "key": "cap",
+                                "key": "38_cap",
                                 "nome": "cap",
                                 "type": "text"
                             },
                             {
-                                "key": "indirizzo",
+                                "key": "39_indirizzo",
                                 "nome": "Indirizzo",
                                 "type": "text"
                             }
@@ -227,30 +242,30 @@ export class ProjectPlanService {
                     },
                     {
                         "nome": "Dati Documento",
-                        "key": "paragrafoDatiDocumento",
+                        "key": "40_paragrafoDatiDocumento",
                         "input": [
                             {
-                                "key": "documento",
+                                "key": "41_documento",
                                 "nome": "Documento di Riconoscimento",
                                 "type": "text"
                             },
                             {
-                                "key": "numero_documento",
+                                "key": "42_numero_documento",
                                 "nome": "Numero Documento",
                                 "type": "text"
                             },
                             {
-                                "key": "ente_rilascio",
+                                "key": "43_ente_rilascio",
                                 "nome": "Rilasciato Da",
                                 "type": "text"
                             },
                             {
-                                "key": "data_scadenza",
+                                "key": "44_data_scadenza",
                                 "nome": "Data Scadenza",
                                 "type": "text"
                             },
                             {
-                                "key": "data_rilascio",
+                                "key": "45_data_rilascio",
                                 "nome": "Data Rilascio",
                                 "type": "text"
                             }
@@ -258,20 +273,20 @@ export class ProjectPlanService {
                     },
                     {
                         "nome": "Altre Informazioni",
-                        "key": "paragrafoAltreInformazioni",
+                        "key": "46_paragrafoAltreInformazioni",
                         "input": [
                             {
-                                "key": "titolo_studio",
+                                "key": "47_titolo_studio",
                                 "nome": "Titolo di Studio",
                                 "type": "text"
                             },
                             {
-                                "key": "data_adesione_precedente",
+                                "key": "48_data_adesione_precedente",
                                 "nome": "Data Adesione Precedente piano di prestito",
                                 "type": "text"
                             },
                             {
-                                "key": "attestato_idoneita",
+                                "key": "49_attestato_idoneita",
                                 "nome": "soggetto referente del prestito è in possesso dell'attestato di idoneità rilasciato dall'istituto di credito",
                                 "type": "select",
                                 "options": [
@@ -286,19 +301,463 @@ export class ProjectPlanService {
                                 ]
                             },
                             {
-                                "key": "quota",
+                                "key": "50_quota",
                                 "nome": "Quota",
-                                "type": "string"
+                                "type": "text"
                             },
                             {
-                                "key": "posizione",
+                                "key": "51_posizione",
+                                "nome": "Posizione",
+                                "type": "text"
+                            },
+                            {
+                                "key": "51bis_firma_digitale",
                                 "nome": "il soggetto referente del prestito è in possesso di un kit di firma digitale in corso di validità",
                                 "type": "check"
                             }
                         ]
                     }
                 ]
+            },
+            {
+                "nome": "Composizione Compagine Sociale",
+                "key": "52_schedaCompagineSociale",
+                "sezioni":[
+                    {
+                       "nome": "Dati Anagrafici",
+                        "key": "53_paragrafoDatiAnagrafici",
+                        "input": [
+                            {
+                                "key": "54_cognome",
+                                "nome": "Cognome",
+                                "type": "text"
+                            },
+                            {
+                                "key": "55_nome",
+                                "nome": "Nome",
+                                "type": "text"
+                            },
+                            {
+                                "key": "56_data_nascita",
+                                "nome": "Data di Nascita",
+                                "type": "text"
+                            },
+                            {
+                                "key": "57_cf",
+                                "nome": "Codice Fiscale",
+                                "type": "text"
+                            },
+                            {
+                                "key": "58_sesso",
+                                "nome": "Sesso",
+                                "type": "text"
+                            },
+                            {
+                                "key": "59_luogo_nascita",
+                                "nome": "Nato A",
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    {
+                        "nome": "Dati di Residenza",
+                        "key": "60_paragrafoDatiResidenza",
+                        "input": [
+                            {
+                                "key": "61_regione",
+                                "nome": "Regione",
+                                "type": "text"
+                            },
+                            {
+                                "key": "62_provincia",
+                                "nome": "Provincia",
+                                "type": "text"
+                            },
+                            {
+                                "key": "63_comune",
+                                "nome": "Comune",
+                                "type": "text"
+                            },
+                            {
+                                "key": "64_cap",
+                                "nome": "cap",
+                                "type": "text"
+                            },
+                            {
+                                "key": "65_indirizzo",
+                                "nome": "Indirizzo",
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    {
+                        "nome": "Dati Documento",
+                        "key": "66_paragrafoDatiDocumento",
+                        "input": [
+                            {
+                                "key": "67_documento",
+                                "nome": "Documento di Riconoscimento",
+                                "type": "text"
+                            },
+                            {
+                                "key": "68_numero_documento",
+                                "nome": "Numero Documento",
+                                "type": "text"
+                            },
+                            {
+                                "key": "69_ente_rilascio",
+                                "nome": "Rilasciato Da",
+                                "type": "text"
+                            },
+                            {
+                                "key": "70_data_scadenza",
+                                "nome": "Data Scadenza",
+                                "type": "text"
+                            },
+                            {
+                                "key": "71_data_rilascio",
+                                "nome": "Data Rilascio",
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    {
+                        "nome": "Altre Informazioni",
+                        "key": "72_paragrafoAltreInformazioni",
+                        "input": [
+                            {
+                                "key": "73_titolo_studio",
+                                "nome": "Titolo di Studio",
+                                "type": "text"
+                            },
+                            {
+                                "key": "74_data_adesione_precedente",
+                                "nome": "Data Adesione Precedente piano di prestito",
+                                "type": "text"
+                            },
+                            {
+                                "key": "75_attestato_idoneita",
+                                "nome": "soggetto referente del prestito è in possesso dell'attestato di idoneità rilasciato dall'istituto di credito",
+                                "type": "select",
+                                "options": [
+                                    {
+                                        "label": "Si",
+                                        "value": "si"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "no"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "76_quota",
+                                "nome": "Quota",
+                                "type": "string"
+                            },
+                            {
+                                "key": "77_posizione",
+                                "nome": "Posizione",
+                                "type": "text"
+                            },
+                            {
+                                "key": "77bis_firma_digitale",
+                                "nome": "il soggetto referente del prestito è in possesso di un kit di firma digitale in corso di validità",
+                                "type": "check"
+                            }
+                        ]
+                    },
+                    {
+                        "nome": "Sede Legale",
+                        "key": "78_paragrafoSedeLegale",
+                        "input":[
+                            {
+                                "key": "79_regione",
+                                "nome": "Regione",
+                                "type": "text"
+                            },
+                            {
+                                "key": "80_provincia",
+                                "nome": "Provincia",
+                                "type": "text"
+                            },
+                            {
+                                "key": "81_comune",
+                                "nome": "Comune",
+                                "type": "text"
+                            },
+                            {
+                                "key": "82_cap",
+                                "nome": "cap",
+                                "type": "text"
+                            },
+                            {
+                                "key": "83_indirizzo",
+                                "nome": "Indirizzo",
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    {
+                        "nome": "Sede Operativa",
+                        "key": "84_paragrafoSedeOperativa",
+                        "input":[
+                            {
+                                "key": "85_sede_operativa_loco",
+                                "nome": "Sede Operativa in loco",
+                                "type": "select",
+                                "options": [
+                                    {
+                                        "label": "Si",
+                                        "value": "si"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "no"
+                                    }
+                                ]
+                            },
+                            {
+                               "key": "86_regione",
+                                "nome": "Regione",
+                                "type": "text" 
+                            },
+                            {
+                                "key": "87_provincia",
+                                "nome": "Provincia",
+                                "type": "text"
+                            },
+                            {
+                                "key": "88_comune",
+                                "nome": "Comune",
+                                "type": "text"
+                            },
+                            {
+                                "key": "89_cap",
+                                "nome": "cap",
+                                "type": "text"
+                            },
+                            {
+                                "key": "90_indirizzo",
+                                "nome": "Indirizzo",
+                                "type": "text"
+                            },
+                            {
+                                "key": "91_disponibilita_sede_operativa",
+                                "nome": "Disponibilità Sede Operativa",
+                                "type": "text"
+                            },
+                            {
+                                "key": "92_titolo_disponibilita",
+                                "nome": "Titolo di Disponibilità",
+                                "type": "text"
+                            },
+                            {
+                                "key": "93_durata_anni",
+                                "nome": "Durata (anni)",
+                                "type": "text"
+                            },
+                            {
+                                "key": "94_data_iniziale",
+                                "nome": "Data iniziale",
+                                "type": "text"
+                            },
+                            {
+                                "key": "95_data_finale",
+                                "nome": "Data finale",
+                                "type": "text"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "nome": "Sedi Societa'",
+                "key": "96_schedaSediSocieta",
+                "sezioni":[
+                    {
+                        "nome": "Sede Legale",
+                        "key": "97_paragrafoSedeLegale",
+                        "input":[
+                            {
+                                "key": "98_regione",
+                                "nome": "Regione",
+                                "type": "text"
+                            },
+                            {
+                                "key": "99_provincia",
+                                "nome": "Provincia",
+                                "type": "text"
+                            },
+                            {
+                                "key": "100_comune",
+                                "nome": "Comune",
+                                "type": "text"
+                            },
+                            {
+                                "key": "101_cap",
+                                "nome": "cap",
+                                "type": "text"
+                            },
+                            {
+                                "key": "102_indirizzo",
+                                "nome": "Indirizzo",
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    {
+                        "nome": "Sede Operativa",
+                        "key": "103_paragrafoSedeOperativa",
+                        "input":[
+                            {
+                                "key": "104_sede_operativa_individuata",
+                                "nome": "Sede Operativa individuata",
+                                "type": "select",
+                                "options": [
+                                    {
+                                        "label": "Si",
+                                        "value": "si"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "no"
+                                    }
+                                ]
+                            },
+                            {
+                               "key": "105_regione",
+                                "nome": "Regione",
+                                "type": "text" 
+                            },
+                            {
+                                "key": "106_provincia",
+                                "nome": "Provincia",
+                                "type": "text"
+                            },
+                            {
+                                "key": "107_comune",
+                                "nome": "Comune",
+                                "type": "text"
+                            },
+                            {
+                                "key": "108_cap",
+                                "nome": "cap",
+                                "type": "text"
+                            },
+                            {
+                                "key": "109_indirizzo",
+                                "nome": "Indirizzo",
+                                "type": "text"
+                            },
+                            {
+                                "key": "110_disponibilita_branch",
+                                "nome": "Disponibilità Branch",
+                                "type": "select",
+                                "options": [
+                                    {
+                                        "label": "Si",
+                                        "value": "si"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "no"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "111_titolo_disponibilita",
+                                "nome": "Titolo di Disponibilità",
+                                "type": "text"
+                            },
+                            {
+                                "key": "112_durata_anni",
+                                "nome": "Durata (anni)",
+                                "type": "text"
+                            },
+                            {
+                                "key": "113_data_iniziale",
+                                "nome": "Data iniziale",
+                                "type": "text"
+                            },
+                            {
+                                "key": "114_data_finale",
+                                "nome": "Data finale",
+                                "type": "text"
+                            }
+                        ]
+                    }      
+                ]
+            },
+            {
+                "nome": "Contatti",
+                "key": "115_schedaContatti",
+                "sezioni":[
+                    {
+                        "nome": "Contatti",
+                        "key": "116_paragrafoContatti",
+                        "input":[
+                            {
+                                "key": "117_email",
+                                "nome": "Email",
+                                "type": "text"
+                            },
+                            {
+                                "key": "118_pec",
+                                "nome": "Pec",
+                                "type": "text"
+                            },
+                            {
+                                "key": "119_telefono",
+                                "nome": "telefono",
+                                "type": "text"
+                            },
+                            {
+                                "key": "120_cellulare",
+                                "nome": "Cellulare",
+                                "type": "text"
+                            }
+                        ]  
+                    }
+                ]
             }
+        ]
+    },
+    {
+        "nome": "Sezione B - Piano degli investimenti",
+        "key": "121_sezioneB",
+        "schede": [
+            {
+                "nome": "Scelta del Prestito",
+                "key": "122_schedaSceltaDelPrestito",
+                "sezioni": [
+                    {
+                        "nome": "Scelta del Prestito",
+                        "key": "123_paragrafoSceltaDelPrestito",
+                        "input":[
+                             {
+                                "key": "124_tipologia_prestito",
+                                "nome": "Tipologia Prestito",
+                                "type": "select",
+                                 "options": [
+                                    {
+                                        "label": "Piccolo prestito finalizzato (5000 a 25000€)",
+                                        "value": "piccolo_prestito"
+                                    },
+                                    {
+                                        "label": "Micro prestito esteso (25000,01 a 35000€)",
+                                        "value": "micro_prestito"
+                                    },
+                                    {
+                                        "label": "Medio prestito (35000,01 a 50000€)",
+                                        "value": "medio_prestito"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
         ]
     }
 ];

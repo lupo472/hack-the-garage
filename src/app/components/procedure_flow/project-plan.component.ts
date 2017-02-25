@@ -15,15 +15,56 @@ export class ProjectPlanComponent {
         private procedureService: ProcedureFlowService,
         private projectPlanService: ProjectPlanService,
         private _ngZone: NgZone,
+        private fb: FormBuilder,
     ) {}
-    projectPlan: any;
-
+    proj: any;
+    private ready:boolean = false;
+    forms: FormGroup;
+    isReady ():boolean { return this.ready; };
+    
     tryLoad = function() {
         let p = this.projectPlanService.isReady();
         if (p) {
-            this.projectPlan = this.projectPlanService.getProjectTemplate(this.procedureService.procedure.projectType.id);
+            this.proj = this.projectPlanService.getProjectTemplate(this.procedureService.procedure.projectType.id);
             
-            
+
+
+
+            let navs = {};
+            for (let i = 0; i < this.proj.length; i++) {
+                let nav = this.proj[i];
+                let firstLevelObj = {};
+
+                for (let j = 0; j < nav.schede.length; j++) {
+                    let scheda = nav.schede[j];
+                    let secondLevelObj = {};
+
+                    for (let k = 0; k < scheda.sezioni.length; k++) {
+                        let sezione = scheda.sezioni[k];
+                        let thirdLevelObj = {};
+
+                        for (let l = 0; l < sezione.input.length; l++) {
+                            let input = sezione.input[l];
+                            thirdLevelObj[input.key] = "";
+                        }
+                        secondLevelObj[sezione.key] = this.fb.group(thirdLevelObj);
+
+                    }
+
+                    firstLevelObj[scheda.key] = this.fb.group(secondLevelObj);
+                }
+
+                navs[nav.key] = this.fb.group(firstLevelObj);
+            }
+            this.forms = new FormGroup(navs);
+
+            //
+            this.forms.valueChanges.subscribe((data:any)=> {
+                this.procedureService.procedure.projectData = data;
+            });
+
+                console.log(this.forms);
+            this.ready = true;
             //LORENZO CARICA QUI LA ROBA, QUESTO è IL TUO SPAZIO ;)
             //GUARDA DI LA' COME HO GESTITO ANCHE IL RIEMPIMENTO DEI DATI...
             //LA FUNZIONE SOTTO APPLYFORMDATA() VIENE GIà CHIAMATA A DOVERE (O QUASI, NON POSSO TESTARE FINCHé NON FINISCI LA MAPPATURA)
@@ -36,6 +77,9 @@ export class ProjectPlanComponent {
 
     applyFormData() {
 
+    }
+    ngOnDestroy() {
+        
     }
 }
 

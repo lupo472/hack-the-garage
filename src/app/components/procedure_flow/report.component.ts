@@ -13,6 +13,7 @@ export class ReportComponent {
     constructor(
         private flowService:ProcedureFlowService,
     ) { }
+    
 
     allTheData: any = {};
 
