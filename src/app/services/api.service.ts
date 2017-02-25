@@ -138,7 +138,7 @@ export class ApiService {
                             .catch(this.handleError);
     }
 
-    uploadFile(procedureId: string, data: string, name: string): Observable<any> {
+    uploadFile(procedureId: string, data: string, name: string, ext: string): Observable<any> {
         let headers = new Headers({ 'Content-Type': 'application/pdf' });
         let options = new RequestOptions({ headers: headers });
 
