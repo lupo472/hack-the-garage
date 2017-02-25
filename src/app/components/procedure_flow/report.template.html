@@ -1,3 +1,7 @@
+<a style="background-color: #4db6ac;color:#fff; position: relative;
+    right: -50%;
+    left: 50%;" md-raised-button (click)="download()">Print PDF </a>
+
 <div *ngFor="let data of allTheData | keys">
     <h1 style="
     text-align: right;
@@ -10,13 +14,14 @@
         <h2 style=" 
         font-weight: 200;
         color: #00695c;"
-         >{{allTheData[data].value[tab].label}}</h2>
+        >{{allTheData[data].value[tab].label}}</h2>
 
         <div *ngFor="let sez of allTheData[data].value[tab].value | keys">
             <h3>{{allTheData[data].value[tab].value[sez].label}}</h3>
             <div *ngFor="let inp of allTheData[data].value[tab].value[sez].value | keys">
-                <p>{{allTheData[data].value[tab].value[sez].value[inp].label}}: <strong>{{allTheData[data].value[tab].value[sez].value[inp].value}}</strong></p>
+                <p>{{allTheData[data].value[tab].value[sez].value[inp].label}}: <strong>{{allTheData[data].value[tab].value[sez].value[inp].value}}</strong>
+                </p>
             </div>
         </div>
     </div>
-<!-- -->
+    <!-- -->

@@ -18,6 +18,9 @@ export class ReportComponent {
     
     template: any = {};
     allTheData: any = {};
+    download () {
+        window.print();
+    }
 
     loadData() {
         //questo viene chiamato
