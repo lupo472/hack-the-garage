@@ -62,8 +62,8 @@ export class ProjectPlanComponent {
             this.forms.valueChanges.subscribe((data:any)=> {
                 this.procedureService.procedure.projectData = data;
             });
-
-                console.log(this.forms);
+            this.applyFormData();
+            console.log(this.forms);
             this.ready = true;
             //LORENZO CARICA QUI LA ROBA, QUESTO è IL TUO SPAZIO ;)
             //GUARDA DI LA' COME HO GESTITO ANCHE IL RIEMPIMENTO DEI DATI...
@@ -76,7 +76,7 @@ export class ProjectPlanComponent {
     }
 
     applyFormData() {
-
+        this.forms.patchValue(this.procedureService.procedure.projectData);
     }
     ngOnDestroy() {
         

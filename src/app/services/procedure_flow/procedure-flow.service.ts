@@ -26,8 +26,8 @@ export class ProcedureFlowService {
     }
 
     saveFlow(id: number) {
-        Procedure.absorbe(this.procedure, this.temp);
-        return this.procService.updateProcedure(id, this.temp);
+        //Procedure.absorbe(this.procedure, this.temp);
+        return this.procService.updateProcedure(id, this.procedure);
     }
 
     setProjectTemplate(template:any){
