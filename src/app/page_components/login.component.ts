@@ -20,13 +20,14 @@ export class LoginComponent {
     onLoginButtonClick(){ 
         this.userService.userLogin(this.email, this.password).subscribe(response => {
             console.log(response);
-            if(response != null){
+            if(response.status){
+                alert("Credenziali errate!");
+
+            }
+            else{
                 this.userService.setLoggedIn(response);
                 console.log(this.userService.getLoggedIn());
                 this.router.navigate([""]);
-            }
-            else{
-                alert("Credenziali errate!");
             }
         },
          );

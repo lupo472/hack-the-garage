@@ -146,7 +146,7 @@ export class ApiService {
                             {
                                 procedure_id: procedureId,
                                 data: data,
-                                ext: "image/jpg",
+                                ext: "application/pdf",
                                 name:name 
                             },)
                             .map(this.extractData)
@@ -158,7 +158,9 @@ export class ApiService {
     private extractData(res: Response) {
         let body = res.json();
         console.log(body);
+        if(body.status == "OK")
         return body.data || { };
+        return body;
     }
 
     private handleError (error: Response | any) {

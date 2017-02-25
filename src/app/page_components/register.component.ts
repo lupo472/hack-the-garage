@@ -23,8 +23,13 @@ export class RegisterComponent {
     onRegisterButtonClick(){
         this.userService.userSignUp(this.email, this.firstName, this.lastName, this.password).subscribe(
             response => {
-                        console.log(response);
+                if(response.status){
+                        alert("Utente già presente");
+                }
+                else {
+                    console.log(response);
                         this.router.navigate(["login"]);
+                }
 
             },
         );

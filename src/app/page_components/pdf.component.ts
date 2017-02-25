@@ -25,8 +25,10 @@ export class PdfComponent {
         let file: any;
         reader.onload = function(e: any) {
             file = e.target.result;
-            console.log(e.target);
-            this.fileService.uploadFile('"'+e.target.result + '"', this.route.snapshot.params["id"], "certificate.jpg").subscribe(
+            let index: number = file.indexOf(",");
+            let str: string = file.substr(index +1);
+            /*console.log(str);*/
+            this.fileService.uploadFile(str, this.route.snapshot.params["id"], "report.pdf").subscribe(
                 ()=> {
                     console.log("file uploaded");
                 },
