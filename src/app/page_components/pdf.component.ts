@@ -31,6 +31,7 @@ export class PdfComponent {
             );
             console.log("la tu mamma");
         }.bind(this);
+        reader.readAsDataURL(fileInput.target.files[0]);
     }
     
     /*
