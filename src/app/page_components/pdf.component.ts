@@ -10,20 +10,30 @@ import { FileService } from '../services/file.service';
 })
 
 export class PdfComponent {
-    private fileReader: FileReader = new FileReader();
+    
     private base64Encoded: string;
     private myInputValue: string;
     private status: string;
 
     constructor(private fileService: FileService) {
-        this.fileReader.onload = (file) => {
-            this.base64Encoded = this.fileReader.result;
-            console.log("Encoded file!");
-        }
+        
     }
-
+    fileChangeEvent(fileInput: any) {
+        let reader: FileReader = new FileReader();
+        let file: any;
+        reader.onload = function(e: any) {
+            file = e.target.result;
+            console.log(file);
+            this.fileService.uploadFile(file).subscribe(
+                ()=> {
+                    console.log("file uploaded");
+                }
+            );
+            console.log("la tu mamma");
+        }.bind(this);
+    }
     
-
+    /*
     public download() {
 
         var doc = new jsPDF();
@@ -42,7 +52,7 @@ export class PdfComponent {
         doc.save('Test.pdf');
     }
 
-public fileChangeEvent(fileInput: any){
+    public fileChangeEvent(fileInput: any){
         if (fileInput.target.files && fileInput.target.files[0]) {
             var reader = new FileReader();
             var file;
@@ -54,5 +64,5 @@ public fileChangeEvent(fileInput: any){
             reader.readAsDataURL(fileInput.target.files[0]);
         }
     }
-
+    */
 }
