@@ -138,12 +138,29 @@ export class ApiService {
                             .catch(this.handleError);
     }
 
-    
+    uploadFile(procedureId: string, data: string, name: string, ext: string): Observable<any> {
+        let headers = new Headers({ 'Content-Type': 'application/pdf' });
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.post(this.apiUrl + "upload_file",
+                            {
+                                procedure_id: procedureId,
+                                data: data,
+                                ext: "application/pdf",
+                                name:name 
+                            },)
+                            .map(this.extractData)
+                            .catch(this.handleError);
+    }
+
+
 
     private extractData(res: Response) {
         let body = res.json();
         //console.log(body);
+        if(body.status == "OK")
         return body.data || { };
+        return body;
     }
 
     private handleError (error: Response | any) {

@@ -1,6 +1,7 @@
 import {MasterDataComponent} from "../components/procedure_flow/master-data.component";
 declare let jsPDF : any;
 import {Component} from "@angular/core";
+import {ActivatedRoute} from "@angular/router";
 import {MasterData} from '../model/master-data';
 import { FileService } from '../services/file.service';
  
@@ -15,24 +16,65 @@ export class PdfComponent {
     private myInputValue: string;
     private status: string;
 
-    constructor(private fileService: FileService) {
-        
-    }
-    fileChangeEvent(fileInput: any) {
+    constructor(
+        private fileService: FileService,
+        private route: ActivatedRoute,
+        ) { }
+    fileChangeEvent(fileInput: any, id: number) {
         let reader: FileReader = new FileReader();
         let file: any;
         reader.onload = function(e: any) {
             file = e.target.result;
-            console.log(file);
-            this.fileService.uploadFile(file).subscribe(
+            let index: number = file.indexOf(",");
+            let str: string = file.substr(index +1);
+            /*console.log(str);*/
+            let name: string;
+            let mime: string
+
+            switch(id){
+                case 1: {
+                    name = "report.pdf";
+                    mime = "application/pdf";
+                    break;
+                }
+                case 2: {
+                    let index1: number = file.indexOf(":");
+                    let index2: number = file.indexOf(";");
+                    let str: string = file.substr(index1 + 1, index2);
+                    let ext: string = str.substring(str.indexOf("/") + 1);
+                    console.log(str);
+                    console.log(ext);
+                    if(ext == "jpeg")
+                        ext = "jpg";
+                    name = "id_card." + ext;
+                    mime = str;
+                    console.log(name);
+                    console.log(mime);
+                    break;
+                }
+                case 3: {
+                    let index: number = file.indexOf(":");
+                    let str: string = file.substr(index + 1,file.indexOf(";"));
+                    let ext: string = str.substring(str.indexOf("/" + 1));
+                    if(ext == "jpeg")
+                        ext = "jpg";
+                    name = "certificate." + ext;
+                    mime = str;
+                    break;
+                }
+            }
+            this.fileService.uploadFile(str, this.route.snapshot.params["id"], name, mime).subscribe(
                 ()=> {
                     console.log("file uploaded");
-                }
+                },
             );
-            console.log("la tu mamma");
+            console.log("la tu mamma"); 
         }.bind(this);
-        reader.readAsDataURL(fileInput.target.files[0]);
+         reader.readAsDataURL(fileInput.target.files[0]);
+
     }
+
+    
     
     /*
     public download() {

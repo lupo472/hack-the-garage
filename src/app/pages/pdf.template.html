@@ -1,7 +1,15 @@
 <a style="background-color: #4db6ac;color:#fff;" md-raised-button (click) ="download()">Download PDF </a>
 
 
-    <input type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
+    <input type="file" (change)="fileChangeEvent($event,1)" placeholder="Upload file..." />
+        <input type="file" (change)="fileChangeEvent($event,2)" placeholder="Upload file..." />
+            <input type="file" (change)="fileChangeEvent($event,3)" placeholder="Upload file..." />
+
+
+  
+
+
+
 
 <style>
     a {

@@ -7,6 +7,8 @@ export class UserService{
 
     constructor(private backend: ApiService){ }
 
+    private loggedId: string;
+
     getUserId(): string{
         return "a.a@asd.com";
     }
@@ -17,5 +19,13 @@ export class UserService{
 
     userSignUp(email: string, firstName: string, lastName: string, password: string){
         return this.backend.signUp(email,firstName,lastName,password);
+    }
+
+    getLoggedIn(): string{
+        return this.loggedId;
+    }
+
+    setLoggedIn(loggedIn: string){
+        this.loggedId = loggedIn;
     }
 }

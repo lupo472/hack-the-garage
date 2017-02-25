@@ -7,19 +7,19 @@ font-weight: 200;
 color:#00695c;
 ">Register</h1>
     <md-input-container>
-        <input mdInput placeholder="FirstName">
+        <input mdInput placeholder="FirstName" [(ngModel)] = "firstName">
     </md-input-container>
         <md-input-container>
-        <input mdInput placeholder="LastName">
+        <input mdInput placeholder="LastName" [(ngModel)] = "lastName">
     </md-input-container>
         <md-input-container>
-        <input mdInput placeholder="Email"type="email">
+        <input mdInput placeholder="Email"type="email" [(ngModel)] = "email">
     </md-input-container>
     <md-input-container>
-        <input mdInput placeholder="Password" type="password">
+        <input mdInput placeholder="Password" type="password" [(ngModel)] = "password">
     </md-input-container>
     <md-card-actions>
-    <button style="background-color: #4db6ac;color:#fff;"md-raised-button>Register</button>
+    <button style="background-color: #4db6ac;color:#fff;"md-raised-button (click) = "onRegisterButtonClick()">Register</button>
   </md-card-actions>
 </md-card>
 
