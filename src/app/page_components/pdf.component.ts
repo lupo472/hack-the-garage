@@ -2,25 +2,38 @@ import {MasterDataComponent} from "../components/procedure_flow/master-data.comp
 declare let jsPDF : any;
 import {Component} from "@angular/core";
 import {MasterData} from '../model/master-data';
-
+import { FileService } from '../services/file.service';
+ 
 @Component({
     selector: 'pdf',
     templateUrl: '/app/pages/pdf.template.html'
 })
 
 export class PdfComponent {
-    private fileReader: FileReader = new FileReader();
+    
     private base64Encoded: string;
     private myInputValue: string;
-    constructor() {
-        this.fileReader.onload = (file) => {
-            this.base64Encoded = this.fileReader.result;
-            console.log("Encoded file!");
-        }
+    private status: string;
+
+    constructor(private fileService: FileService) {
+        
     }
-
+    fileChangeEvent(fileInput: any) {
+        let reader: FileReader = new FileReader();
+        let file: any;
+        reader.onload = function(e: any) {
+            file = e.target.result;
+            console.log(file);
+            this.fileService.uploadFile(file).subscribe(
+                ()=> {
+                    console.log("file uploaded");
+                }
+            );
+            console.log("la tu mamma");
+        }.bind(this);
+    }
     
-
+    /*
     public download() {
 
         var doc = new jsPDF();
@@ -39,32 +52,17 @@ export class PdfComponent {
         doc.save('Test.pdf');
     }
 
+    public fileChangeEvent(fileInput: any){
+        if (fileInput.target.files && fileInput.target.files[0]) {
+            var reader = new FileReader();
+            var file;
+            reader.onload = function (e : any) {
+                file = e.target.result;
+                this.fileService.fileUpload(file).subscribe(response => this.status = response.status,);
 
-    encodeFile(f : File) {
-        this.fileReader.readAsText(f);
+            }
+            reader.readAsDataURL(fileInput.target.files[0]);
+        }
     }
-
+    */
 }
-
-/*
-var handleFileSelect = function(evt) {
-    var files = evt.target.files;
-    var file = files[0];
-
-    if (files && file) {
-        var reader = new FileReader();
-
-        reader.onload = function(readerEvt) {
-            var binaryString = readerEvt.target.result;
-            console.log ( btoa(binaryString));
-        };
-
-        reader.readAsBinaryString(file);
-    }
-};
-
-if (window.File && window.FileReader && window.FileList && window.Blob) {
-    document.getElementById('filePicker').addEventListener('change', handleFileSelect, false);
-} else {
-    alert('The File APIs are not fully supported in this browser.');
-}*/
