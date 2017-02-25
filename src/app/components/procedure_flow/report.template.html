@@ -1,0 +1,30 @@
+    <div *ngFor="let sezione of projectPlan" label="{{sezione.nome}}">
+        <h1>
+            <div *ngFor="let tab of sezione.schede" label="{{tab.nome}}">
+                <h2>
+                    <div *ngFor="let sez of tab.sezioni" label="{{sez.nome}}">
+                        <div *ngFor="let inp of sez.input">
+                            <div [ngSwitch]="inp.type">
+                                <p *ngSwitchCase="'text'">
+                                    <input mdInput placeholder="{{inp.nome}}" name="inp.key">
+                                </p>
+                                <p *ngSwitchCase="'number'">
+                                    <input mdInput type="number" placeholder="{{inp.nome}}">
+                                </p>
+                                <!-- radio button -->
+                                <p  *ngSwitchCase="'radio'">
+                                    <md-radio-button *ngFor="let opt of inp.options" value="{{opt.value}}">{{opt.label}}</md-radio-button>
+                                </p>
+                                <!-- checkbox -->
+                                <p  *ngSwitchCase="'check'">{{inp.nome}}</p>
+                                <!-- select -->
+                                <p  *ngSwitchCase="'select'" placeholder="{{inp.nome}}">
+                                    <md-option *ngFor="let opt of inp.options" [value]="opt.value">{{ opt.label }}</md-option>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </h2>
+            </div>
+        </h1>
+    </div>
