@@ -2,9 +2,13 @@
 <md-sidenav-container style="    
     position: fixed;
     top: 0px;
+    background-image: url(/app/res/background.png);
+    background-repeat:no-repeat;
+    background-position: bottom;
     bottom: 0px;
     left: 0px;
-    right: 0px;" 
+    right: 0px;"
+    
     class="example-container">
   <md-toolbar color="primary" *ngIf="state() == 'standard'">
     <md-icon id="hamburger" (click)="sidenav.open()">&#xE5D2;</md-icon>
