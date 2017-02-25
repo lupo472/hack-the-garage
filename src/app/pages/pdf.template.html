@@ -1,10 +1,8 @@
 <a md-raised-button (click) ="download()">Download PDF </a>
 
 
-<input #thefile type="file" id="myFile" [(ngModel)]="myInputValue">
-
-
-<button (click)="encodeFile(thefile.value)">Send</button>
+    <input type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
+    <input type="submit" (click)="sendFile()" />
 
 <style>
     a {
