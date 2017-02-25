@@ -5,17 +5,17 @@
     padding-right: 20px;
     color: white;
     background-color: #4db6ac;"
-    >{{data}}</h1>
-    <div *ngFor="let tab of allTheData[data] | keys">
+    >{{allTheData[data].label}}</h1>
+    <div *ngFor="let tab of allTheData[data].value | keys">
         <h2 style=" 
         font-weight: 200;
         color: #00695c;"
-         >{{tab}}</h2>
+         >{{allTheData[data].value[tab].label}}</h2>
 
-        <div *ngFor="let sez of allTheData[data][tab] | keys">
-            <h3>{{sez}}</h3>
-            <div *ngFor="let inp of allTheData[data][tab][sez] | keys">
-                <p>{{inp}}: <strong>{{allTheData[data][tab][sez][inp]}}</strong></p>
+        <div *ngFor="let sez of allTheData[data].value[tab].value | keys">
+            <h3>{{allTheData[data].value[tab].value[sez].label}}</h3>
+            <div *ngFor="let inp of allTheData[data].value[tab].value[sez].value | keys">
+                <p>{{allTheData[data].value[tab].value[sez].value[inp].label}}: <strong>{{allTheData[data].value[tab].value[sez].value[inp].value}}</strong></p>
             </div>
         </div>
     </div>
