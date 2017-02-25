@@ -54,32 +54,8 @@ export class NewProcedureComponent implements OnInit {
             navs[nav.key] = firstLevelObj;
             console.log(firstLevelObj);
         }
-        let myForm = navs;
 
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        console.log(proj);
-        console.log(myForm);
+        procedure.projectData = navs;
 
         this.procedureService.saveProcedure(procedure).subscribe((id: number)=> {
             this.router.navigate(["procedure", id]);
