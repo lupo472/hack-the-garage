@@ -29,7 +29,7 @@ export class PdfComponent {
             let str: string = file.substr(index +1);
             /*console.log(str);*/
             let name: string;
-            let mime: string
+            let mime: string;
 
             switch(id){
                 case 1: {
