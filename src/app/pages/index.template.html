@@ -12,9 +12,11 @@
     class="example-container">
   <md-toolbar color="primary" *ngIf="state() == 'standard'">
     <md-icon id="hamburger" (click)="sidenav.open()">&#xE5D2;</md-icon>
-    <button  md-button routerLink="/login">Login</button>
-    <button md-button routerLink="/register">Register</button>
-    <button md-button routerLink="/">Home</button>
+    <button *ngIf="!getUserLogged()" md-button routerLink="/login">Login</button>
+    <button *ngIf="!getUserLogged()" md-button routerLink="/register">Register</button>
+    <button *ngIf="getUserLogged()" md-button routerLink="/welcome">Home</button>
+    <button *ngIf="getUserLogged()" md-button routerLink="/procedure-list">Procedures</button>
+
   </md-toolbar>
   <md-toolbar color="primary" *ngIf="state() != 'standard'">
   </md-toolbar>
