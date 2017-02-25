@@ -11,4 +11,18 @@ export class ApplicantData {
     postalCode: number;
     phone: string;
     email: string;
+    constructor() {
+        this.firstName = "";
+        this.lastName = "";
+        this.bornCountry = "";
+        this.bornCity = "";
+        this.bornDate = new Date();
+        this.taxCode = "";
+        this.country = "";
+        this.city = "";
+        this.address = "";
+        this.postalCode = 0;
+        this.phone = "";
+        this.email = "";
+    }
 }

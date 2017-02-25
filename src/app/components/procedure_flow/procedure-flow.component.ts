@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 
 import { ProcedureFlowService } from "../../services/procedure_flow/procedure-flow.service"
@@ -24,14 +24,27 @@ export class ProcedureFlowComponent implements OnInit {
         private projectPlanService: ProjectPlanService,
         private router: Router,
     ) { }
+    startMasterData: MasterData;
+
+    @ViewChild(MasterDataComponent)
+    private mDataChild: MasterDataComponent;
 
     ngOnInit() {
         this.procedureService.getProcedure(this.route.snapshot.params["id"]).subscribe(
             proc => {
                 
                 this.flowService.loadProcedure(proc);
+                this.mDataChild.applyFormData();
             },
         );
         if (!this.projectPlanService.isReady()) this.router.navigate([""]);
+    }
+
+    onSave() {
+        console.log("updating data");
+        this.flowService.saveFlow(this.route.snapshot.params["id"]).subscribe(()=>{
+            console.log("updated data");
+            this.mDataChild.applyFormData();
+        });
     }
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit} from "@angular/core";
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from "@angular/core";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 
@@ -20,7 +20,37 @@ export class MasterDataComponent implements OnInit {
     constructor(private fb: FormBuilder,
                 private procedureFlow: ProcedureFlowService) {
     }
-    @Input() startData: MasterData;
+    
+    applyFormData() {
+        console.log("data has arrived");
+        if (this.procedureFlow.procedure.masterData) {
+            this.applicantForm.patchValue({
+                applicantFirstName: this.procedureFlow.procedure.masterData.applicant.firstName,
+                applicantLastName: this.procedureFlow.procedure.masterData.applicant.lastName,
+                applicantBornCountry: this.procedureFlow.procedure.masterData.applicant.bornCountry,
+                applicantBornCity: this.procedureFlow.procedure.masterData.applicant.bornCity,
+                applicantBornDate: this.procedureFlow.procedure.masterData.applicant.bornDate,
+                applicantTaxCode: this.procedureFlow.procedure.masterData.applicant.taxCode,
+                applicantCountry: this.procedureFlow.procedure.masterData.applicant.country,
+                applicantCity: this.procedureFlow.procedure.masterData.applicant.city,
+                applicantAddress: this.procedureFlow.procedure.masterData.applicant.address,
+                applicantPostalCode: this.procedureFlow.procedure.masterData.applicant.postalCode,
+                applicantPhone: this.procedureFlow.procedure.masterData.applicant.phone,
+                applicantEmail: this.procedureFlow.procedure.masterData.applicant.email
+            });
+            this.companyForm.patchValue({
+                companyName:  this.procedureFlow.procedure.masterData.company.name,
+                companyVat: this.procedureFlow.procedure.masterData.company.vat,
+                companyCountry:  this.procedureFlow.procedure.masterData.company.country,
+                companyCity: this.procedureFlow.procedure.masterData.company.city,
+                companyAddress:  this.procedureFlow.procedure.masterData.company.address,
+                companyPostalCode: this.procedureFlow.procedure.masterData.company.postalCode,
+                companyPhone:  this.procedureFlow.procedure.masterData.company.phone,
+                companyEmail: this.procedureFlow.procedure.masterData.company.email
+            });
+            console.log("aggiornata");
+        }
+    }
 
     ngOnInit() {
         this.applicantForm = this.fb.group({
@@ -80,23 +110,6 @@ export class MasterDataComponent implements OnInit {
             console.log(this.procedureFlow.temp.masterData.company);
         });
 
-
-        //assegno i valori di default
-        if (this.startData)
-        this.applicantForm.setValue({
-            firstName: this.startData.applicant.firstName,
-            lastName: this.startData.applicant.lastName,
-            bornCountry: this.startData.applicant.bornCountry,
-            bornCity: this.startData.applicant.bornCity,
-            bornDate: this.startData.applicant.bornDate,
-            taxCode: this.startData.applicant.taxCode,
-            country: this.startData.applicant.country,
-            city: this.startData.applicant.city,
-            address: this.startData.applicant.address,
-            postalCode: this.startData.applicant.postalCode,
-            phone: this.startData.applicant.phone,
-            email: this.startData.applicant.email
-        });
     }
 
 }

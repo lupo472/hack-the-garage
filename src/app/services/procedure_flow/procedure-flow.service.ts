@@ -23,8 +23,9 @@ export class ProcedureFlowService {
         console.log("FLOW-SERVICE: -->> LOADING PROCEDURE: " + this.procedure.toString());
     }
 
-    saveFlow() {
-        return this.procService.saveProcedure(this.temp);
+    saveFlow(id: number) {
+        Procedure.absorbe(this.procedure, this.temp);
+        return this.procService.updateProcedure(id, this.temp);
     }
 
     setProjectTemplate(template:any){
@@ -33,5 +34,6 @@ export class ProcedureFlowService {
 
     discardFlow() {
         //TODO: put procedure in temp
+        Procedure.absorbe(this.temp, this.procedure);
     }
 }

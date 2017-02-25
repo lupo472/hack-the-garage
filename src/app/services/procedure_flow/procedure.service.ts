@@ -18,8 +18,7 @@ export class ProcedureService {
         ){ }
 
     saveProcedure(procedureData: Procedure) {
-        let title = procedureData.masterData.company.name + " for " + procedureData.masterData.applicant.lastName;
-        return this.backend.saveProcedure(this.user.getUserId(), procedureData, title);
+        return this.backend.saveProcedure(this.user.getUserId(), procedureData, "Empty Procedure");
     }
 
     getProcedureList(){
@@ -35,8 +34,9 @@ export class ProcedureService {
         return this.backend.getProjectTypeList();
     }
     
-    updateProcedure(procedureId: number, procedureTitle: string, procedureData: Procedure){
-        return this.backend.updateProcedure(procedureId, procedureTitle, procedureData);
+    updateProcedure(procedureId: number, procedureData: Procedure){
+        let title = procedureData.masterData.company.name + " for " + procedureData.masterData.applicant.lastName;
+        return this.backend.updateProcedure(procedureId, title, procedureData);
     }
 
     deleteProcedure(procedureId: number){
