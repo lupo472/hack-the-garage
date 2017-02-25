@@ -2,6 +2,8 @@ import {Component} from "@angular/core";
 
 import { ProcedureFlowService } from "../../services/procedure_flow/procedure-flow.service";
 
+import { KeysPipe } from '../../pipes/keys.pipe';
+
 
 @Component( {
     selector: "report",
@@ -12,9 +14,13 @@ export class ReportComponent {
         private flowService:ProcedureFlowService,
     ) { }
 
-    allTheData: any = this.flowService.procedure.projectData
-    ngOnInit(){
-        console.log(this.allTheData)
+    allTheData: any = {};
+
+    loadData() {
+        //questo viene chiamato 
+        this.allTheData = this.flowService.procedure.projectData;
+        console.log(this.allTheData);
+
     }
 }
 

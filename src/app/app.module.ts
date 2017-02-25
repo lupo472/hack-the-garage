@@ -33,6 +33,9 @@ import {StatusService} from './services/status.service';
 import {ApiService} from './services/api.service';
 import {FileService} from './services/file.service';
 
+//import pipes
+import { KeysPipe } from './pipes/keys.pipe';
+
 
 const appRoutes: Routes = [
     {path: '', component: LoginComponent},
@@ -68,7 +71,9 @@ const appRoutes: Routes = [
         ProjectPlanComponent,
         PdfComponent,
         WelcomeComponent,
-        ReportComponent
+        ReportComponent,
+
+        KeysPipe
     ],
     providers: [  //import services globally into project
         LangService,

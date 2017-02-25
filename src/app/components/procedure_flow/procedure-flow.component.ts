@@ -6,6 +6,7 @@ import { ProcedureService } from "../../services/procedure_flow/procedure.servic
 
 import { MasterDataComponent } from "./master-data.component"
 import { ProjectPlanComponent } from "./project-plan.component"
+import { ReportComponent } from "./report.component"
 
 import { MasterData } from "../../model/master-data"
 import { CompanyData } from "../../model/company-data"
@@ -31,6 +32,8 @@ export class ProcedureFlowComponent implements OnInit {
     private mDataChild: MasterDataComponent;
     @ViewChild(ProjectPlanComponent)
     private planChild: ProjectPlanComponent;
+    @ViewChild(ReportComponent)
+    private reportChild: ReportComponent;
 
     ngOnInit() {
         this.procedureService.getProcedure(this.route.snapshot.params["id"]).subscribe(
@@ -38,6 +41,7 @@ export class ProcedureFlowComponent implements OnInit {
                 
                 this.flowService.loadProcedure(proc);
                 this.planChild.tryLoad();
+                this.reportChild.loadData();
                 //this.mDataChild.applyFormData();
                 //this.planChild.applyFormData();
             },
