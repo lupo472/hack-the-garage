@@ -20,6 +20,7 @@ export class MasterDataComponent implements OnInit {
     constructor(private fb: FormBuilder,
                 private procedureFlow: ProcedureFlowService) {
     }
+    @Input() startData: MasterData;
 
     ngOnInit() {
         this.applicantForm = this.fb.group({
@@ -78,7 +79,24 @@ export class MasterDataComponent implements OnInit {
             };
             console.log(this.procedureFlow.temp.masterData.company);
         });
-    }
 
+
+        //assegno i valori di default
+        if (this.startData)
+        this.applicantForm.setValue({
+            firstName: this.startData.applicant.firstName,
+            lastName: this.startData.applicant.lastName,
+            bornCountry: this.startData.applicant.bornCountry,
+            bornCity: this.startData.applicant.bornCity,
+            bornDate: this.startData.applicant.bornDate,
+            taxCode: this.startData.applicant.taxCode,
+            country: this.startData.applicant.country,
+            city: this.startData.applicant.city,
+            address: this.startData.applicant.address,
+            postalCode: this.startData.applicant.postalCode,
+            phone: this.startData.applicant.phone,
+            email: this.startData.applicant.email
+        });
+    }
 
 }

@@ -27,7 +27,10 @@ export class ProcedureFlowComponent implements OnInit {
 
     ngOnInit() {
         this.procedureService.getProcedure(this.route.snapshot.params["id"]).subscribe(
-            proc => this.flowService.loadProcedure(proc),
+            proc => {
+                
+                this.flowService.loadProcedure(proc);
+            },
         );
         if (!this.projectPlanService.isReady()) this.router.navigate([""]);
     }
