@@ -742,6 +742,33 @@
                     }
                 ]
             },
+            {
+                "nome": "Idea di Investimento",
+                "key": "125_schedaIdeaDiInvestimento",
+                "sezioni": [
+                    {
+                        "nome": "Idea di Investimento",
+                        "key": "126_paragrafoIdeaDiInvestimento",
+                        "input":[
+                            {
+                                "key": "127_modalita_utilizzo_prestito",
+                                "nome": "Cosa vuoi fare e come intendi utilizzare il prestito",
+                                "type": "text"
+                            },
+                            {
+                                "key": "128_destinazione_prestito",
+                                "nome": "Dove vuoi localizzare la maggiore quantità del prestito ed a a chi è rivolto",
+                                "type": "text"
+                            },
+                            {
+                                "key": "129_motivazione_prestito",
+                                "nome": "Perché tale decisione",
+                                "type": "text"
+                            }
+                        ]
+                    }
+                ]
+            }
         ]
     }
-];
+]
