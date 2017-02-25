@@ -20,6 +20,7 @@ import {ProcedureFlowComponent}  from './components/procedure_flow/procedure-flo
 import {MasterDataComponent}  from './components/procedure_flow/master-data.component';
 import {ProjectPlanComponent}  from './components/procedure_flow/project-plan.component';
 import {WelcomeComponent} from './page_components/welcome.component';
+import {ReportComponent} from './components/procedure_flow/report.component';
 
 //import services
 import {LangService} from './services/lang.service';
@@ -66,7 +67,8 @@ const appRoutes: Routes = [
         MasterDataComponent,
         ProjectPlanComponent,
         PdfComponent,
-        WelcomeComponent
+        WelcomeComponent,
+        ReportComponent
     ],
     providers: [  //import services globally into project
         LangService,

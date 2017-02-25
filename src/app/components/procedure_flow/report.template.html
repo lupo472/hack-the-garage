@@ -1,5 +1,6 @@
-    <div *ngFor="let sezione of projectPlan" label="{{sezione.nome}}">
-        <h1>
+<!--
+    <div *ngFor="let data of allTheData" label="{{sezione.nome}}">
+        <h1>data</h1>
             <div *ngFor="let tab of sezione.schede" label="{{tab.nome}}">
                 <h2>
                     <div *ngFor="let sez of tab.sezioni" label="{{sez.nome}}">
@@ -11,13 +12,13 @@
                                 <p *ngSwitchCase="'number'">
                                     <input mdInput type="number" placeholder="{{inp.nome}}">
                                 </p>
-                                <!-- radio button -->
+                                &lt;!&ndash; radio button &ndash;&gt;
                                 <p  *ngSwitchCase="'radio'">
                                     <md-radio-button *ngFor="let opt of inp.options" value="{{opt.value}}">{{opt.label}}</md-radio-button>
                                 </p>
-                                <!-- checkbox -->
+                                &lt;!&ndash; checkbox &ndash;&gt;
                                 <p  *ngSwitchCase="'check'">{{inp.nome}}</p>
-                                <!-- select -->
+                                &lt;!&ndash; select &ndash;&gt;
                                 <p  *ngSwitchCase="'select'" placeholder="{{inp.nome}}">
                                     <md-option *ngFor="let opt of inp.options" [value]="opt.value">{{ opt.label }}</md-option>
                                 </p>
@@ -26,5 +27,5 @@
                     </div>
                 </h2>
             </div>
-        </h1>
     </div>
+-->
