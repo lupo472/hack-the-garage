@@ -1,7 +1,17 @@
 <div *ngFor="let data of allTheData | keys">
-    <h1>{{data}}</h1>
+    <h1 style="
+    text-align: right;
+    font-weight: 200;
+    padding-right: 20px;
+    color: white;
+    background-color: #4db6ac;"
+    >{{data}}</h1>
     <div *ngFor="let tab of allTheData[data] | keys">
-        <h2>{{tab}}</h2>
+        <h2 style=" 
+        font-weight: 200;
+        color: #00695c;"
+         >{{tab}}</h2>
+
         <div *ngFor="let sez of allTheData[data][tab] | keys">
             <h3>{{sez}}</h3>
             <div *ngFor="let inp of allTheData[data][tab][sez] | keys">
@@ -9,4 +19,4 @@
             </div>
         </div>
     </div>
-</div>
+<!-- -->
