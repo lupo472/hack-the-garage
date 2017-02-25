@@ -27,7 +27,7 @@ export class LoginComponent {
             else{
                 this.userService.setLoggedIn(response);
                 console.log(this.userService.getLoggedIn());
-                this.router.navigate([""]);
+                this.router.navigate(["welcome"]);
             }
         },
          );

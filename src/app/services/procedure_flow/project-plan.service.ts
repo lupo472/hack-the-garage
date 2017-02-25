@@ -288,7 +288,7 @@ export class ProjectPlanService {
                             {
                                 "key": "quota",
                                 "nome": "Quota",
-                                "type": "check"
+                                "type": "string"
                             },
                             {
                                 "key": "posizione",

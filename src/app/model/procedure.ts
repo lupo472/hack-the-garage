@@ -3,11 +3,11 @@ import { ProjectType } from './project-type'
 
 export class Procedure {
     constructor(){
-        //this.masterData = new MasterData();
+        this.masterData = new MasterData();
         this.projectData = {};
         this.projectType = new ProjectType();
     }
-    //masterData: MasterData;
+    masterData: MasterData;
     projectData: any;
     projectType: ProjectType;
 
