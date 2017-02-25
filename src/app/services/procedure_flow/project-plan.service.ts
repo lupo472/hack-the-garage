@@ -17,12 +17,15 @@ export class ProjectPlanService {
         return [
     {
         "nome": "Sezione A - Dati Anagrafici",
+        "key": "sezioneA",
         "schede": [
             {
                 "nome": "Soggetto del Prestito",
+                "key": "schedaSoggettoPrestito",
                 "sezioni": [
                     {
                         "nome": "Dati Anagrafici",
+                        "key": "paragrafoDatiAnagrafici",
                         "input": [
                             {
                                 "key": "cognome",
@@ -58,6 +61,7 @@ export class ProjectPlanService {
                     },
                     {
                         "nome": "Dati di Residenza",
+                        "key": "paragrafoDatiResidenza",
                         "input": [
                             {
                                 "key": "regione",
@@ -88,6 +92,7 @@ export class ProjectPlanService {
                     },
                     {
                         "nome": "Dati Documento",
+                        "key": "paragrafoDatiDocumento",
                         "input": [
                             {
                                 "key": "documento",
@@ -118,6 +123,7 @@ export class ProjectPlanService {
                     },
                     {
                         "nome": "Altre Informazioni",
+                        "key": "paragrafoAltreInformazioni",
                         "input": [
                             {
                                 "key": "titolo_studio",
@@ -150,9 +156,11 @@ export class ProjectPlanService {
             },
             {
                 "nome": "Soggetto Proponente",
+                "key": "schedaSoggettoProponente",
                 "sezioni": [
                     {
                         "nome": "Dati Anagrafici",
+                        "key": "paragrafoDatiAnagrafici",
                         "input": [
                             {
                                 "key": "cognome",
@@ -188,6 +196,7 @@ export class ProjectPlanService {
                     },
                     {
                         "nome": "Dati di Residenza",
+                        "key": "paragrafoDatiResidenza",
                         "input": [
                             {
                                 "key": "regione",
@@ -218,6 +227,7 @@ export class ProjectPlanService {
                     },
                     {
                         "nome": "Dati Documento",
+                        "key": "paragrafoDatiDocumento",
                         "input": [
                             {
                                 "key": "documento",
@@ -248,6 +258,7 @@ export class ProjectPlanService {
                     },
                     {
                         "nome": "Altre Informazioni",
+                        "key": "paragrafoAltreInformazioni",
                         "input": [
                             {
                                 "key": "titolo_studio",
