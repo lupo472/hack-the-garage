@@ -32,3 +32,11 @@ md-icon#hamburger {
         display: block;
     }
 }
+
+@media print and (color) {
+
+    .mat-tab-labels, .mat-tab-header, #biglabel, md-toolbar {
+        display: none !important;
+    }
+
+}

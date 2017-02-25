@@ -22,7 +22,7 @@ export class PdfComponent {
         ) { }
 
         download(id:string) {
-            document.getElementById(id).click();
+            window.print();
         }
 
     fileChangeEvent(fileInput: any, id: number) {

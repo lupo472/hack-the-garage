@@ -1,0 +1,7 @@
+@media print and screen {  
+ 
+.md-toolbar {
+    display: none;	
+
+}
+}
