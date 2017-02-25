@@ -1,6 +1,6 @@
 <div style= "text-align:center;vertical-align: middle;" >
 
-<md-card *ngFor="let t of types" style=" width: 200px;display: inline-block;" class="cardina" (click)=onCardSelected(t.id)>
+<md-card *ngFor="let t of types" style=" width: 200px;display: inline-block; cursor: pointer;" class="cardina" (click)=onCardSelected(t)>
   <md-card-header>
     <div style=" 
     background-image: url('/app/res/money.png');
@@ -20,8 +20,7 @@ color:#00695c;" >{{t.title}}</md-card-title>
     </p>
   </md-card-content>
   <md-card-actions>
-    <button style="background-color: #4db6ac;color:#fff;" md-button>Bottone1</button>
-    <button style="background-color: #4db6ac;color:#fff;"md-button>BOTTONE2</button>
+    <button style="background-color: #4db6ac;color:#fff;" md-button>CREA</button>
   </md-card-actions>
 </md-card>
 

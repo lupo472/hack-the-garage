@@ -5,6 +5,7 @@ import { ProcedureFlowService } from "../../services/procedure_flow/procedure-fl
 import { ProcedureService } from "../../services/procedure_flow/procedure.service"
 
 import { MasterDataComponent } from "./master-data.component"
+import { ProjectPlanComponent } from "./project-plan.component"
 
 import { MasterData } from "../../model/master-data"
 import { CompanyData } from "../../model/company-data"
@@ -28,12 +29,15 @@ export class ProcedureFlowComponent implements OnInit {
 
     @ViewChild(MasterDataComponent)
     private mDataChild: MasterDataComponent;
+    @ViewChild(ProjectPlanComponent)
+    private planChild: ProjectPlanComponent;
 
     ngOnInit() {
         this.procedureService.getProcedure(this.route.snapshot.params["id"]).subscribe(
             proc => {
                 
                 this.flowService.loadProcedure(proc);
+                this.planChild.tryLoad();
                 this.mDataChild.applyFormData();
             },
         );
@@ -52,5 +56,12 @@ export class ProcedureFlowComponent implements OnInit {
         console.log("discarding");
         this.flowService.discardFlow();
         this.router.navigate([""]);
+    }
+
+    onDelete() {
+        console.log("deleting");
+        this.flowService.deleteProcedure(this.route.snapshot.params["id"]).subscribe(()=>{
+            this.router.navigate([""]);
+        });
     }
 }

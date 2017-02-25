@@ -17,8 +17,12 @@ export class NewProcedureComponent implements OnInit {
     ) { }
     types: ProjectType;
 
-    onCardSelected(id: string) {
+    onCardSelected(t: ProjectType) {
         let procedure: Procedure = new Procedure();
+        procedure.projectType = t;
+        this.procedureService.saveProcedure(procedure).subscribe((id: number)=> {
+            this.router.navigate(["procedure", id]);
+        });
     }
 
     ngOnInit() {

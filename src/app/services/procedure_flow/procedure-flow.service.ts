@@ -36,4 +36,8 @@ export class ProcedureFlowService {
         //TODO: put procedure in temp
         Procedure.absorbe(this.temp, this.procedure);
     }
+
+    deleteProcedure(id: number) {
+        return this.procService.deleteProcedure(id);
+    }
 }

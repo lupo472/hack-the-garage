@@ -10,7 +10,7 @@ import {ArrayType} from "@angular/compiler/src/output/output_ast";
     selector: "project-plan",
     templateUrl: "/app/components/procedure_flow/project-plan.template.html"
 })
-export class ProjectPlanComponent implements OnInit {
+export class ProjectPlanComponent {
     constructor (
         private procedureService: ProcedureFlowService,
         private projectPlanService: ProjectPlanService,
@@ -18,14 +18,10 @@ export class ProjectPlanComponent implements OnInit {
     ) {}
     projectPlan: any;
 
-    ngOnInit() {
-        this.tryLoad();
-
-    }
-    private tryLoad = function() {
+    tryLoad = function() {
         let p = this.projectPlanService.isReady();
         if (p) {
-            this.projectPlan = this.projectPlanService.getProjectTemplate("/hackthegarage.appspot.com/project_template/industrial.json");
+            this.projectPlan = this.projectPlanService.getProjectTemplate(this.procedureService.procedure.projectType.id);
         } else {
             setTimeout(this.tryload, 200);
         }

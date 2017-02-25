@@ -14,7 +14,9 @@ export class ProcedureListComponent implements OnInit {
 
     ngOnInit() {
         this.procedureService.getProcedureList().subscribe(
-            data => this.procs = data,
+            data => {
+                if (data.length > 0) this.procs = data;
+            },
         );
     }
 

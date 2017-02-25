@@ -7,8 +7,11 @@ font-weight: 200;
 color:#00695c;
 ">Procedures</h1>
 
-<md-list>
+<md-list *ngIf="procs">
     <md-list-item *ngFor="let item of procs" ><md-icon style="color:#004d40;font-size: 40px;" md-list-avatar>assignment</md-icon><button md-button routerLink="/procedure/{{item.id}}">procedure no. {{ item.id }} : {{ item.name }}</button></md-list-item>
+</md-list>
+<md-list *ngIf="!procs">
+    <md-list-item ><md-icon style="color:#004d40;font-size: 40px;" md-list-avatar>assignment</md-icon><button md-button >You have no procedures yet.</button></md-list-item>
 </md-list>
 
 <!--<div class="example-tooltip-host" mdTooltip="Tooltip!" [mdTooltipPosition]="position">
