@@ -1,26 +1,33 @@
 <md-tab-group>
-    <md-tab *ngFor="let tab of projectPlan" label="{{tab.name}}">
-
-        <div *ngFor="let inp of tab.inputs">
-            <div [ngSwitch]="inp.type">
-                <md-input-container *ngSwitchCase="'text'">
-                    <input mdInput placeholder="{{inp.name}}">
-                </md-input-container>
-                <md-input-container *ngSwitchCase="'number'">
-                    <input mdInput type="number" placeholder="{{inp.name}}">
-                </md-input-container>
-                <!-- radio button -->
-                <md-radio-group  *ngSwitchCase="'radio'">
-                    <md-radio-button *ngFor="let opt of inp.options" value="{{opt.value}}">{{opt.label}}</md-radio-button>
-                </md-radio-group>
-                <!-- checkbox -->
-                <md-checkbox  *ngSwitchCase="'check'">{{inp.name}}</md-checkbox>
-                <!-- select -->
-                <md-select  *ngSwitchCase="'select'" placeholder="{{inp.name}}">
-                    <md-option *ngFor="let opt of inp.options" [value]="opt.value">{{ opt.label }}</md-option>
-                </md-select>
-            </div>
-        </div>
+    <md-tab *ngFor="let sezione of projectPlan" label="{{sezione.nome}}">
+        <md-tab-group>
+            <md-tab *ngFor="let tab of sezione.schede" label="{{tab.nome}}">
+                <md-tab-group>
+                    <md-tab *ngFor="let sez of tab.sezioni" label="{{sez.nome}}">
+                        <div *ngFor="let inp of sez.input">
+                            <div [ngSwitch]="inp.type">
+                                <md-input-container *ngSwitchCase="'text'">
+                                    <input mdInput placeholder="{{inp.nome}}" name="inp.key">
+                                </md-input-container>
+                                <md-input-container *ngSwitchCase="'number'">
+                                    <input mdInput type="number" placeholder="{{inp.nome}}">
+                                </md-input-container>
+                                <!-- radio button -->
+                                <md-radio-group  *ngSwitchCase="'radio'">
+                                    <md-radio-button *ngFor="let opt of inp.options" value="{{opt.value}}">{{opt.label}}</md-radio-button>
+                                </md-radio-group>
+                                <!-- checkbox -->
+                                <md-checkbox  *ngSwitchCase="'check'">{{inp.nome}}</md-checkbox>
+                                <!-- select -->
+                                <md-select  *ngSwitchCase="'select'" placeholder="{{inp.nome}}">
+                                    <md-option *ngFor="let opt of inp.options" [value]="opt.value">{{ opt.label }}</md-option>
+                                </md-select>
+                            </div>
+                        </div>
+                    </md-tab>
+                </md-tab-group>
+            </md-tab>
+        </md-tab-group>
     </md-tab>
 </md-tab-group>
 

@@ -38,7 +38,8 @@ export class ProcedureFlowComponent implements OnInit {
                 
                 this.flowService.loadProcedure(proc);
                 this.planChild.tryLoad();
-                this.mDataChild.applyFormData();
+                //this.mDataChild.applyFormData();
+                //this.planChild.applyFormData();
             },
         );
         if (!this.projectPlanService.isReady()) this.router.navigate([""]);
@@ -48,7 +49,8 @@ export class ProcedureFlowComponent implements OnInit {
         console.log("updating data");
         this.flowService.saveFlow(this.route.snapshot.params["id"]).subscribe(()=>{
             console.log("updated data");
-            this.mDataChild.applyFormData();
+            //this.mDataChild.applyFormData();
+            //this.planChild.applyFormData();
         });
     }
 

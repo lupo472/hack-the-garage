@@ -22,13 +22,20 @@ export class ProjectPlanComponent {
         let p = this.projectPlanService.isReady();
         if (p) {
             this.projectPlan = this.projectPlanService.getProjectTemplate(this.procedureService.procedure.projectType.id);
+            
+            
+            //LORENZO CARICA QUI LA ROBA, QUESTO è IL TUO SPAZIO ;)
+            //GUARDA DI LA' COME HO GESTITO ANCHE IL RIEMPIMENTO DEI DATI...
+            //LA FUNZIONE SOTTO APPLYFORMDATA() VIENE GIà CHIAMATA A DOVERE (O QUASI, NON POSSO TESTARE FINCHé NON FINISCI LA MAPPATURA)
+            //USALA PER RIEMPIRE I CAMPI CON PATCHdATA COME DI Là
+
         } else {
             setTimeout(this.tryload, 200);
         }
     }
-    onSubmit(): void {
-        // Your form value is outputted as a JavaScript object.
-        // Parse it as JSON or take the values necessary to use as you like
+
+    applyFormData() {
+
     }
 }
 
