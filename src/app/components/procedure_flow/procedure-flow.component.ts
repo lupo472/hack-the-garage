@@ -47,4 +47,10 @@ export class ProcedureFlowComponent implements OnInit {
             this.mDataChild.applyFormData();
         });
     }
+
+    onDiscard() {
+        console.log("discarding");
+        this.flowService.discardFlow();
+        this.router.navigate([""]);
+    }
 }
