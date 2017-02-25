@@ -20,13 +20,50 @@ export class PdfComponent {
         private fileService: FileService,
         private route: ActivatedRoute,
         ) { }
-    fileChangeEvent(fileInput: any) {
+    fileChangeEvent(fileInput: any, id: number) {
         let reader: FileReader = new FileReader();
         let file: any;
         reader.onload = function(e: any) {
             file = e.target.result;
-            console.log(e.target);
-            this.fileService.uploadFile('"'+e.target.result + '"', this.route.snapshot.params["id"], "certificate.jpg").subscribe(
+            let index: number = file.indexOf(",");
+            let str: string = file.substr(index +1);
+            /*console.log(str);*/
+            let name: string;
+            let mime: string
+
+            switch(id){
+                case 1: {
+                    name = "report.pdf";
+                    mime = "application/pdf";
+                    break;
+                }
+                case 2: {
+                    let index1: number = file.indexOf(":");
+                    let index2: number = file.indexOf(";");
+                    let str: string = file.substr(index1 + 1, index2);
+                    let ext: string = str.substring(str.indexOf("/") + 1);
+                    console.log(str);
+                    console.log(ext);
+                    if(ext == "jpeg")
+                        ext = "jpg";
+                    name = "id_card." + ext;
+                    mime = str;
+                    console.log(name);
+                    console.log(mime);
+                    break;
+                }
+                case 3: {
+                    let index: number = file.indexOf(":");
+                    let str: string = file.substr(index + 1,file.indexOf(";"));
+                    let ext: string = str.substring(str.indexOf("/" + 1));
+                    if(ext == "jpeg")
+                        ext = "jpg";
+                    name = "certificate." + ext;
+                    mime = str;
+                    break;
+                }
+            }
+            this.fileService.uploadFile(str, this.route.snapshot.params["id"], name, mime).subscribe(
                 ()=> {
                     console.log("file uploaded");
                 },

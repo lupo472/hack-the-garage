@@ -6,8 +6,8 @@ export class FileService {
     constructor(
         private backend: ApiService,
     ) {}
-    uploadFile(file: string, procedureId: string, name: string) {
-        this.backend.uploadFile(procedureId,file,name).subscribe(
+    uploadFile(file: string, procedureId: string, name: string, ext: string) {
+        this.backend.uploadFile(procedureId,file,name, ext).subscribe(
             response => {
                 console.log(response);
             }
