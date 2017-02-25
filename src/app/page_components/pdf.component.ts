@@ -1,6 +1,7 @@
 import {MasterDataComponent} from "../components/procedure_flow/master-data.component";
 declare let jsPDF : any;
 import {Component} from "@angular/core";
+import {ActivatedRoute} from "@angular/router";
 import {MasterData} from '../model/master-data';
 import { FileService } from '../services/file.service';
  
@@ -15,23 +16,27 @@ export class PdfComponent {
     private myInputValue: string;
     private status: string;
 
-    constructor(private fileService: FileService) {
-        
-    }
+    constructor(
+        private fileService: FileService,
+        private route: ActivatedRoute,
+        ) { }
     fileChangeEvent(fileInput: any) {
         let reader: FileReader = new FileReader();
         let file: any;
         reader.onload = function(e: any) {
             file = e.target.result;
-            console.log(file);
-            this.fileService.uploadFile(file).subscribe(
+            console.log(e.target);
+            this.fileService.uploadFile('"'+e.target.result + '"', this.route.snapshot.params["id"], "certificate.jpg").subscribe(
                 ()=> {
                     console.log("file uploaded");
-                }
+                },
             );
-            console.log("la tu mamma");
+            console.log("la tu mamma"); 
         }.bind(this);
+         reader.readAsDataURL(fileInput.target.files[0]);
     }
+
+    
     
     /*
     public download() {

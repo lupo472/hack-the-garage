@@ -138,7 +138,22 @@ export class ApiService {
                             .catch(this.handleError);
     }
 
-    
+    uploadFile(procedureId: string, data: string, name: string): Observable<any> {
+        let headers = new Headers({ 'Content-Type': 'application/pdf' });
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.post(this.apiUrl + "upload_file",
+                            {
+                                procedure_id: procedureId,
+                                data: data,
+                                ext: "image/jpg",
+                                name:name 
+                            },)
+                            .map(this.extractData)
+                            .catch(this.handleError);
+    }
+
+
 
     private extractData(res: Response) {
         let body = res.json();

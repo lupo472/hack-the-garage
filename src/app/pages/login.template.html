@@ -7,13 +7,13 @@ font-weight: 200;
 color:#00695c;
 ">Login </h1>
     <md-input-container>
-        <input mdInput placeholder="Username">
+        <input mdInput placeholder="Username" [(ngModel)]="email">
     </md-input-container>
     <md-input-container>
-        <input mdInput placeholder="Password" type="password">
+        <input mdInput placeholder="Password" type="password" [(ngModel)]="password">
     </md-input-container>
     <md-card-actions>
-    <button style="background-color: #4db6ac;color:#fff;"md-raised-button>Login</button>
+    <button style="background-color: #4db6ac;color:#fff;"md-raised-button (click)="onLoginButtonClick()">Login</button>
   </md-card-actions>
 </md-card>
 
