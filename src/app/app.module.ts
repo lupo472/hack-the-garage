@@ -19,7 +19,7 @@ import {PdfComponent} from './page_components/pdf.component';
 import {ProcedureFlowComponent}  from './components/procedure_flow/procedure-flow.component';
 import {MasterDataComponent}  from './components/procedure_flow/master-data.component';
 import {ProjectPlanComponent}  from './components/procedure_flow/project-plan.component';
-
+import {WelcomeComponent} from './page_components/welcome.component';
 
 //import services
 import {LangService} from './services/lang.service';
@@ -32,13 +32,16 @@ import {StatusService} from './services/status.service';
 import {ApiService} from './services/api.service';
 import {FileService} from './services/file.service';
 
+
 const appRoutes: Routes = [
-    {path: '', component: ProcedureListComponent},
+    {path: '', component: LoginComponent},
     {path: 'list', component: ListComponent},
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
     {path: 'procedure/:id', component: HomeComponent},
     {path: 'new-procedure', component: NewProcedureComponent},
+    {path: 'welcome', component: WelcomeComponent},
+    {path: 'procedure-list', component: ProcedureListComponent}
 ];
 
 @NgModule({
@@ -62,7 +65,8 @@ const appRoutes: Routes = [
         ProcedureListComponent,
         MasterDataComponent,
         ProjectPlanComponent,
-        PdfComponent
+        PdfComponent,
+        WelcomeComponent
     ],
     providers: [  //import services globally into project
         LangService,
